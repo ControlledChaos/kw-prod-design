@@ -2,14 +2,14 @@
 /**
  * Content settings class
  *
- * @package    Site_Core
+ * @package    KW_Prod
  * @subpackage Classes
  * @category   Admin
  * @since      1.0.0
  */
 
-namespace SiteCore\Classes\Admin;
-use SiteCore\Classes\Settings as Settings;
+namespace KWProd\Classes\Admin;
+use KWProd\Classes\Settings as Settings;
 
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -28,8 +28,8 @@ class Content_Settings extends Add_Page {
 	public function __construct() {
 
 		$labels = [
-			'page_title'  => __( 'Content Settings', 'sitecore' ),
-			'menu_title'  => __( 'Content', 'sitecore' ),
+			'page_title'  => __( 'Content Settings', 'kw-prod-design' ),
+			'menu_title'  => __( 'Content', 'kw-prod-design' ),
 			'description' => __( 'Manage how the content of this website is edited and displayed.' )
 		];
 
@@ -59,16 +59,16 @@ class Content_Settings extends Add_Page {
 
 		$this->add_content_tab( [
 			'id'         => 'content-settings-intro',
-			'tab'        => __( 'Intro', 'sitecore' ),
-			'heading'    => __( 'Introduction', 'sitecore' ),
+			'tab'        => __( 'Intro', 'kw-prod-design' ),
+			'heading'    => __( 'Introduction', 'kw-prod-design' ),
 			'content'    => '',
 			'callback'   => [ $this, 'intro_tab' ]
 		] );
 
 		$this->add_content_tab( [
 			'id'         => 'content-settings-sample',
-			'tab'        => __( 'Another', 'sitecore' ),
-			'heading'    => __( 'Sample Tab', 'sitecore' ),
+			'tab'        => __( 'Another', 'kw-prod-design' ),
+			'heading'    => __( 'Sample Tab', 'kw-prod-design' ),
 			'content'    => '',
 			'callback'   => [ $this, 'sample_tab' ]
 		] );
@@ -82,7 +82,7 @@ class Content_Settings extends Add_Page {
 	 * @return string Returns the page heading.
 	 */
 	protected function heading() {
-		return __( 'Content Settings', 'sitecore' );
+		return __( 'Content Settings', 'kw-prod-design' );
 	}
 
 	/**
@@ -93,7 +93,7 @@ class Content_Settings extends Add_Page {
 	 * @return mixed Returns the tab content.
 	 */
 	public function intro_tab() {
-		include SCP_PATH . 'views/backend/pages/partials/settings-content-intro.php';
+		include KWPD_PATH . 'views/backend/pages/partials/settings-content-intro.php';
 	}
 
 	/**
@@ -104,6 +104,6 @@ class Content_Settings extends Add_Page {
 	 * @return mixed Returns the tab content.
 	 */
 	public function sample_tab() {
-		include SCP_PATH . 'views/backend/pages/partials/settings-content-sample.php';
+		include KWPD_PATH . 'views/backend/pages/partials/settings-content-sample.php';
 	}
 }

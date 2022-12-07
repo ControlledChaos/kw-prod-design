@@ -2,13 +2,13 @@
 /**
  * Add Manage Website page
  *
- * @package    Site_Core
+ * @package    KW_Prod
  * @subpackage Classes
  * @category   Admin
  * @since      1.0.0
  */
 
-namespace SiteCore\Classes\Admin;
+namespace KWProd\Classes\Admin;
 
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -27,8 +27,8 @@ class Manage_Website_Page extends Add_Page {
 	public function __construct() {
 
 		$labels = [
-			'page_title'  => __( 'Help Managing This Website', 'sitecore' ),
-			'menu_title'  => __( 'Manage Website', 'sitecore' ),
+			'page_title'  => __( 'Help Managing This Website', 'kw-prod-design' ),
+			'menu_title'  => __( 'Manage Website', 'kw-prod-design' ),
 			'description' => __( 'This page provides you with help managing this website.' )
 		];
 
@@ -59,6 +59,6 @@ class Manage_Website_Page extends Add_Page {
 	 * @return void
 	 */
 	public function content_callback() {
-		include_once SCP_PATH . 'views/backend/pages/manage-website.php';
+		include_once KWPD_PATH . 'views/backend/pages/manage-website.php';
 	}
 }

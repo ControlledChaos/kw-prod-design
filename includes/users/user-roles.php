@@ -2,13 +2,13 @@
 /**
  * User roles and capabilities
  *
- * @package    Site_Core
+ * @package    KW_Prod
  * @subpackage Includes
  * @category   Users
  * @since      1.0.0
  */
 
-namespace SiteCore\User_Roles;
+namespace KWProd\User_Roles;
 
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -62,7 +62,7 @@ function get_roles() {
 
 	global $wp_roles;
 
-	return apply_filters( 'scp_get_roles', $wp_roles->role_names );
+	return apply_filters( 'kwpd_get_roles', $wp_roles->role_names );
 }
 
 /**
@@ -82,7 +82,7 @@ function get_editable_roles() {
 		$final_roles[$key] = $role['name'];
 	}
 
-	return apply_filters( 'scp_get_editable_roles', (array) $final_roles );
+	return apply_filters( 'kwpd_get_editable_roles', (array) $final_roles );
 }
 
 /**
@@ -111,7 +111,7 @@ function get_user_roles( $user = 0 ) {
 		$roles[ $role ] = $all_roles[ $role ];
 	}
 
-	return apply_filters( 'scp_get_user_roles', $roles );
+	return apply_filters( 'kwpd_get_user_roles', $roles );
 }
 
 /**
@@ -126,7 +126,7 @@ function get_user_roles( $user = 0 ) {
  */
 function update_roles( $user_id = 0, $roles = [] ) {
 
-	do_action( 'scp_before_update_roles', $user_id, $roles );
+	do_action( 'kwpd_before_update_roles', $user_id, $roles );
 
 	$roles = array_map( 'sanitize_key', (array) $roles );
 	$roles = array_filter( (array) $roles, 'get_role' );
@@ -149,7 +149,7 @@ function update_roles( $user_id = 0, $roles = [] ) {
 		$user->add_role( $role );
 	}
 
-	do_action( 'scp_after_update_roles', $user_id, $roles, $user->roles );
+	do_action( 'kwpd_after_update_roles', $user_id, $roles, $user->roles );
 
 	return true;
 }
@@ -166,7 +166,7 @@ function update_roles( $user_id = 0, $roles = [] ) {
  */
 function can_update_roles() {
 
-	do_action( 'scp_before_can_update_roles' );
+	do_action( 'kwpd_before_can_update_roles' );
 
 	/**
 	 * Conditionally print the checklist
@@ -207,7 +207,7 @@ function add_user_roles() {
 	 */
 	add_role(
 		'developer',
-		__( 'Developer', 'sitecore' ),
+		__( 'Developer', 'kw-prod-design' ),
 		get_role( 'administrator' )->capabilities
 	);
 }
@@ -275,7 +275,7 @@ function profile_role_output_checklist( $user ) {
 		return;
 	}
 
-	wp_nonce_field( 'update-scp-multiple-roles', 'scp_multiple_roles_nonce' );
+	wp_nonce_field( 'update-kwpd-multiple-roles', 'kwpd_multiple_roles_nonce' );
 
 	$roles = get_editable_roles();
 
@@ -285,7 +285,7 @@ function profile_role_output_checklist( $user ) {
 		$user_roles = null;
 	}
 
-	include( apply_filters( 'scp_checklist_template', SCP_PATH . 'views/backend/forms/user-roles-checklist.php' ) );
+	include( apply_filters( 'kwpd_checklist_template', KWPD_PATH . 'views/backend/forms/user-roles-checklist.php' ) );
 
 }
 
@@ -305,18 +305,18 @@ function profile_role_process_checklist( $user_id ) {
 	 * The checklist is not always rendered when this method is
 	 * triggered on `profile_update` (i.e. when updating a
 	 * profile programmatically). First check that the
-	 * `scp_multiple_roles_nonce` is available, else bail.
+	 * `kwpd_multiple_roles_nonce` is available, else bail.
 	 * If we continue to process and update_roles(),
 	 * all user roles will be lost. We check for
-	 * `scp_multiple_roles_nonce` rather than `scp_multiple_roles`
+	 * `kwpd_multiple_roles_nonce` rather than `kwpd_multiple_roles`
 	 * as this input/variable will be empty if all role inputs
 	 * are left unchecked.
 	 */
-	if ( ! isset( $_POST['scp_multiple_roles_nonce'] ) ) {
+	if ( ! isset( $_POST['kwpd_multiple_roles_nonce'] ) ) {
 		return;
 	}
 
-	if ( ! wp_verify_nonce( $_POST['scp_multiple_roles_nonce'], 'update-scp-multiple-roles' ) ) {
+	if ( ! wp_verify_nonce( $_POST['kwpd_multiple_roles_nonce'], 'update-kwpd-multiple-roles' ) ) {
 		return;
 	}
 
@@ -324,8 +324,8 @@ function profile_role_process_checklist( $user_id ) {
 		return;
 	}
 
-	if ( isset( $_POST['scp_multiple_roles'] ) && is_array( $_POST['scp_multiple_roles'] ) ) {
-		$new_roles = $_POST['scp_multiple_roles'];
+	if ( isset( $_POST['kwpd_multiple_roles'] ) && is_array( $_POST['kwpd_multiple_roles'] ) ) {
+		$new_roles = $_POST['kwpd_multiple_roles'];
 	} else {
 		$new_roles = [];
 	}
@@ -350,7 +350,7 @@ function profile_role_process_checklist( $user_id ) {
  */
 function network_add_roles_in_signup_meta( $meta, $domain, $path, $title, $user, $user_email, $key ) {
 
-	if ( isset( $_POST['scp_multiple_roles_nonce'] ) && ! wp_verify_nonce( $_POST['scp_multiple_roles_nonce'], 'update-scp-multiple-roles' ) ) {
+	if ( isset( $_POST['kwpd_multiple_roles_nonce'] ) && ! wp_verify_nonce( $_POST['kwpd_multiple_roles_nonce'], 'update-kwpd-multiple-roles' ) ) {
 		return;
 	}
 
@@ -358,8 +358,8 @@ function network_add_roles_in_signup_meta( $meta, $domain, $path, $title, $user,
 		return;
 	}
 
-	if ( isset( $_POST['scp_multiple_roles'] ) && is_array( $_POST['scp_multiple_roles'] ) ) {
-		$new_roles = $_POST['scp_multiple_roles'];
+	if ( isset( $_POST['kwpd_multiple_roles'] ) && is_array( $_POST['kwpd_multiple_roles'] ) ) {
+		$new_roles = $_POST['kwpd_multiple_roles'];
 	} else {
 		$new_roles = [];
 	}
@@ -368,7 +368,7 @@ function network_add_roles_in_signup_meta( $meta, $domain, $path, $title, $user,
 		return;
 	}
 
-	$meta['scp_roles'] = $new_roles;
+	$meta['kwpd_roles'] = $new_roles;
 
 	return $meta;
 }
@@ -386,8 +386,8 @@ function network_add_roles_in_signup_meta( $meta, $domain, $path, $title, $user,
  */
 function network_add_roles_after_activation( $user_id, $password, $meta ) {
 
-	if ( ! empty( $meta['scp_roles'] ) ) {
-		update_roles( $user_id, $meta['scp_roles'] );
+	if ( ! empty( $meta['kwpd_roles'] ) ) {
+		update_roles( $user_id, $meta['kwpd_roles'] );
 	}
 }
 
@@ -403,7 +403,7 @@ function network_add_roles_after_activation( $user_id, $password, $meta ) {
 function list_role_column_replace( $columns ) {
 
 	unset( $columns['role'] );
-	$columns['scp_multiple_roles_column'] = __( 'Roles', 'sitecore' );
+	$columns['kwpd_multiple_roles_column'] = __( 'Roles', 'kw-prod-design' );
 
 	return $columns;
 }
@@ -421,13 +421,13 @@ function list_role_column_replace( $columns ) {
  */
 function list_role_column_content( $output, $column, $user_id ) {
 
-	if ( 'scp_multiple_roles_column' !== $column ) {
+	if ( 'kwpd_multiple_roles_column' !== $column ) {
 		return $output;
 	}
 
 	$roles = get_user_roles( $user_id );
 
 	ob_start();
-	include( apply_filters( 'scp_column_template', SCP_PATH . 'views/backend/forms/user-roles-admin-column.php' ) );
+	include( apply_filters( 'kwpd_column_template', KWPD_PATH . 'views/backend/forms/user-roles-admin-column.php' ) );
 	return ob_get_clean();
 }

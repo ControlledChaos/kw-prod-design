@@ -2,17 +2,17 @@
 /**
  * Admin screens
  *
- * @package    Site_Core
+ * @package    KW_Prod
  * @subpackage Admin
  * @category   General
  * @since      1.0.0
  */
 
-namespace SiteCore\Admin;
+namespace KWProd\Admin;
 
-use SiteCore\Classes as Classes,
-	SiteCore\Compatibility  as Compat,
-	SiteCore\Classes\Vendor as Vendor;
+use KWProd\Classes as Classes,
+	KWProd\Compatibility  as Compat,
+	KWProd\Classes\Vendor as Vendor;
 
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -72,7 +72,7 @@ function setup() {
 	add_action( 'admin_head', $ns( 'admin_only_updates' ), 1 );
 
 	// Remove Site Health from menu.
-	if ( defined( 'SCP_ALLOW_SITE_HEALTH' ) && ! SCP_ALLOW_SITE_HEALTH ) {
+	if ( defined( 'KWPD_ALLOW_SITE_HEALTH' ) && ! KWPD_ALLOW_SITE_HEALTH ) {
 		add_action( 'admin_menu', $ns( 'menu_remove_site_health' ) );
 	}
 
@@ -242,8 +242,8 @@ function menus_widgets() {
 	// Add a new top-level Menus page.
 	if ( current_theme_supports( 'menus' ) || current_theme_supports( 'widgets' ) ) {
 		add_menu_page(
-			__( 'Navigation Menus', 'sitecore' ),
-			__( 'Navigation', 'sitecore' ),
+			__( 'Navigation Menus', 'kw-prod-design' ),
+			__( 'Navigation', 'kw-prod-design' ),
 			'delete_others_pages',
 			'nav-menus.php',
 			'',
@@ -255,8 +255,8 @@ function menus_widgets() {
 	// Add a new top-level Widgets page.
 	if ( current_theme_supports( 'widgets' ) ) {
 		add_menu_page(
-			__( 'Widgets', 'sitecore' ),
-			__( 'Widgets', 'sitecore' ),
+			__( 'Widgets', 'kw-prod-design' ),
+			__( 'Widgets', 'kw-prod-design' ),
 			'delete_others_pages',
 			'widgets.php',
 			'',
@@ -344,8 +344,8 @@ function admin_footer_primary() {
 		'%s %s <a href="%s" target="_blank" rel="nofollow">%s</a> %s',
 		get_bloginfo( 'name' ),
 		esc_html__( 'is managed by the' ),
-		esc_url( SCP_PLUGIN_URL ),
-		esc_html( SCP_NAME ),
+		esc_url( KWPD_PLUGIN_URL ),
+		esc_html( KWPD_NAME ),
 		esc_html__( 'plugin' )
 	);
 
@@ -366,18 +366,18 @@ function admin_footer_primary() {
 		'%s %s <a href="%s" target="_blank" rel="nofollow">%s</a>',
 		get_bloginfo( 'name' ),
 		esc_html__( 'website was designed & developed by' ),
-		esc_url( SCP_DEV_URL ),
-		esc_html( SCP_DEV_NAME )
+		esc_url( KWPD_DEV_URL ),
+		esc_html( KWPD_DEV_NAME )
 	);
 
 	// Developer email option.
 	$dev_email = sprintf(
 		'%s %s %s <a href="mailto:%s">%s</a>',
 		esc_html__( 'Contact' ),
-		esc_html( SCP_DEV_NAME ),
+		esc_html( KWPD_DEV_NAME ),
 		esc_html__( 'for website assistance:' ),
-		esc_html( SCP_DEV_EMAIL ),
-		esc_html( SCP_DEV_EMAIL )
+		esc_html( KWPD_DEV_EMAIL ),
+		esc_html( KWPD_DEV_EMAIL )
 	);
 
 	echo $name;
@@ -400,8 +400,8 @@ function admin_footer_secondary() {
 		'%s %s <a href="%s" target="_blank" rel="nofollow">%s</a> %s',
 		get_bloginfo( 'name' ),
 		esc_html__( 'is managed by the' ),
-		esc_url( SCP_PLUGIN_URL ),
-		esc_html( SCP_NAME ),
+		esc_url( KWPD_PLUGIN_URL ),
+		esc_html( KWPD_NAME ),
 		esc_html__( 'plugin' )
 	);
 
@@ -422,18 +422,18 @@ function admin_footer_secondary() {
 		'%s %s <a href="%s" target="_blank" rel="nofollow">%s</a>',
 		get_bloginfo( 'name' ),
 		esc_html__( 'website was designed & developed by' ),
-		esc_url( SCP_DEV_URL ),
-		esc_html( SCP_DEV_NAME )
+		esc_url( KWPD_DEV_URL ),
+		esc_html( KWPD_DEV_NAME )
 	);
 
 	// Developer email option.
 	$dev_email = sprintf(
 		'%s %s %s <a href="mailto:%s">%s</a>',
 		esc_html__( 'Contact' ),
-		esc_html( SCP_DEV_NAME ),
+		esc_html( KWPD_DEV_NAME ),
 		esc_html__( 'for website assistance:' ),
-		esc_html( SCP_DEV_EMAIL ),
-		esc_html( SCP_DEV_EMAIL )
+		esc_html( KWPD_DEV_EMAIL ),
+		esc_html( KWPD_DEV_EMAIL )
 	);
 
 	echo $dev_email;
@@ -461,7 +461,7 @@ function admin_enqueue_scripts() {
 	 * child classes of the `Add_Page` class. This creates tabbed
 	 * content on admin pages, settings pages, & the dashboard.
 	 */
-	wp_enqueue_script( 'scp-tabs', SCP_URL . 'assets/js/admin-tabs' . $suffix . '.js', [ 'jquery' ], '', true );
+	wp_enqueue_script( 'kwpd-tabs', KWPD_URL . 'assets/js/admin-tabs' . $suffix . '.js', [ 'jquery' ], '', true );
 }
 
 /**
@@ -489,7 +489,7 @@ function admin_enqueue_styles() {
 	 *
 	 * @since 1.0.0
 	 */
-	wp_enqueue_style( 'scp-admin', SCP_URL . 'assets/css/admin' . $suffix . '.css', [], '', 'all' );
+	wp_enqueue_style( 'kwpd-admin', KWPD_URL . 'assets/css/admin' . $suffix . '.css', [], '', 'all' );
 
 	/**
 	 * Enqueue admin tabs styles
@@ -498,5 +498,5 @@ function admin_enqueue_styles() {
 	 * child classes of the `Add_Page` class. This creates tabbed
 	 * content on admin pages, settings pages, & the dashboard.
 	 */
-	wp_enqueue_style( 'scp-tabs', SCP_URL . 'assets/css/admin-tabs' . $suffix . '.css', [], '', 'all' );
+	wp_enqueue_style( 'kwpd-tabs', KWPD_URL . 'assets/css/admin-tabs' . $suffix . '.css', [], '', 'all' );
 }

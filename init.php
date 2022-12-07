@@ -2,25 +2,25 @@
 /**
  * Initialize plugin functionality
  *
- * @package    Site_Core
+ * @package    KW_Prod
  * @subpackage Init
  * @category   Core
  * @since      1.0.0
  */
 
-namespace SiteCore;
+namespace KWProd;
 
 // Alias namespaces.
 use
-SiteCore\Classes\Core     as Core_Class,
-SiteCore\Classes\Settings as Settings_Class,
-SiteCore\Classes\Tools    as Tools_Class,
-SiteCore\Classes\Media    as Media_Class,
-SiteCore\Classes\Users    as Users_Class,
-SiteCore\Classes\Admin    as Backend_Class,
-SiteCore\Classes\Front    as Frontend_Class,
-SiteCore\Classes\Widgets  as Widgets_Class,
-SiteCore\Classes\Vendor   as Vendor_Class;
+KWProd\Classes\Core     as Core_Class,
+KWProd\Classes\Settings as Settings_Class,
+KWProd\Classes\Tools    as Tools_Class,
+KWProd\Classes\Media    as Media_Class,
+KWProd\Classes\Users    as Users_Class,
+KWProd\Classes\Admin    as Backend_Class,
+KWProd\Classes\Front    as Frontend_Class,
+KWProd\Classes\Widgets  as Widgets_Class,
+KWProd\Classes\Vendor   as Vendor_Class;
 
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -42,15 +42,15 @@ function init() {
 
 	// Standard plugin installation.
 	load_plugin_textdomain(
-		'sitecore',
+		'kw-prod-design',
 		false,
-		dirname( SCP_BASENAME ) . '/languages'
+		dirname( KWPD_BASENAME ) . '/languages'
 	);
 
 	// If this is in the must-use plugins directory.
 	load_muplugin_textdomain(
-		'sitecore',
-		dirname( SCP_BASENAME ) . '/languages'
+		'kw-prod-design',
+		dirname( KWPD_BASENAME ) . '/languages'
 	);
 
 	/**
@@ -59,30 +59,30 @@ function init() {
 	 * The autoloader registers plugin classes for later use,
 	 * such as running new instances below.
 	 */
-	require_once SCP_PATH . 'includes/autoloader.php';
+	require_once KWPD_PATH . 'includes/autoloader.php';
 
 	// Load required files.
-	foreach ( glob( SCP_PATH . 'includes/post-types/*.php' ) as $filename ) {
+	foreach ( glob( KWPD_PATH . 'includes/post-types/*.php' ) as $filename ) {
 		require $filename;
 	}
-	foreach ( glob( SCP_PATH . 'includes/media/*.php' ) as $filename ) {
+	foreach ( glob( KWPD_PATH . 'includes/media/*.php' ) as $filename ) {
 		require $filename;
 	}
-	foreach ( glob( SCP_PATH . 'includes/backend/*.php' ) as $filename ) {
+	foreach ( glob( KWPD_PATH . 'includes/backend/*.php' ) as $filename ) {
 		require $filename;
 	}
-	foreach ( glob( SCP_PATH . 'includes/frontend/*.php' ) as $filename ) {
+	foreach ( glob( KWPD_PATH . 'includes/frontend/*.php' ) as $filename ) {
 		require $filename;
 	}
-	foreach ( glob( SCP_PATH . 'includes/users/*.php' ) as $filename ) {
+	foreach ( glob( KWPD_PATH . 'includes/users/*.php' ) as $filename ) {
 		require $filename;
 	}
-	foreach ( glob( SCP_PATH . 'includes/tools/*.php' ) as $filename ) {
+	foreach ( glob( KWPD_PATH . 'includes/tools/*.php' ) as $filename ) {
 		require $filename;
 	}
 
 	// Get compatibility functions.
-	require SCP_PATH . 'includes/vendor/compatibility.php';
+	require KWPD_PATH . 'includes/vendor/compatibility.php';
 
 	// Instantiate settings classes.
 	new Settings_Class\Settings;
@@ -95,7 +95,7 @@ function init() {
 	new Core_Class\Register_Site_Help;
 
 	// If the Customizer is disabled in the system config file.
-	if ( ( defined( 'SCP_ALLOW_CUSTOMIZER' ) && false == SCP_ALLOW_CUSTOMIZER ) && ! current_user_can( 'develop' ) ) {
+	if ( ( defined( 'KWPD_ALLOW_CUSTOMIZER' ) && false == KWPD_ALLOW_CUSTOMIZER ) && ! current_user_can( 'develop' ) ) {
 		new Core_Class\Remove_Customizer;
 	}
 
@@ -125,12 +125,12 @@ function init() {
 	new Media_Class\Register_Media_Type;
 
 	// Advanced Custom Fields.
-	$scp_acf = new Vendor_Class\Plugin_ACF;
-	$scp_acf->include();
+	$kwpd_acf = new Vendor_Class\Plugin_ACF;
+	$kwpd_acf->include();
 
 	// Advanced Custom Fields: Extended.
-	$scp_acfe = new Vendor_Class\Plugin_ACFE;
-	$scp_acfe->include();
+	$kwpd_acfe = new Vendor_Class\Plugin_ACFE;
+	$kwpd_acfe->include();
 
 	// Users.
 	Users\setup();
@@ -140,7 +140,7 @@ function init() {
 	}
 
 	// Customizer/front end.
-	if ( ( defined( 'SCP_ALLOW_CUSTOMIZER' ) && SCP_ALLOW_CUSTOMIZER ) ) {
+	if ( ( defined( 'KWPD_ALLOW_CUSTOMIZER' ) && KWPD_ALLOW_CUSTOMIZER ) ) {
 		Front_Page_Post_Type\setup();
 	}
 
@@ -154,12 +154,12 @@ function init() {
 	new Widgets_Class\Sample_Widget;
 
 	// Disable Site Health notifications.
-	if ( defined( 'SCP_ALLOW_SITE_HEALTH' ) && ! SCP_ALLOW_SITE_HEALTH ) {
+	if ( defined( 'KWPD_ALLOW_SITE_HEALTH' ) && ! KWPD_ALLOW_SITE_HEALTH ) {
 		add_filter( 'wp_fatal_error_handler_enabled', '__return_false' );
 	}
 
 	// Disable block widgets.
-	if ( defined( 'SCP_ALLOW_BLOCK_WIDGETS' ) && ! SCP_ALLOW_BLOCK_WIDGETS ) {
+	if ( defined( 'KWPD_ALLOW_BLOCK_WIDGETS' ) && ! KWPD_ALLOW_BLOCK_WIDGETS ) {
 		add_filter( 'gutenberg_use_widgets_block_editor', '__return_false' );
 		add_filter( 'use_widgets_block_editor', '__return_false' );
 	}
@@ -169,7 +169,7 @@ function init() {
 	 *
 	 * @todo Put into an option.
 	 */
-	if ( defined( 'SCP_ALLOW_LINKS_MANAGER' ) && SCP_ALLOW_LINKS_MANAGER ) {
+	if ( defined( 'KWPD_ALLOW_LINKS_MANAGER' ) && KWPD_ALLOW_LINKS_MANAGER ) {
 		add_filter( 'pre_option_link_manager_enabled', '__return_true' );
 	}
 
@@ -180,7 +180,7 @@ function init() {
 
 	// System email from text.
 	add_filter( 'wp_mail_from_name', function( $name ) {
-		return apply_filters( 'scp_mail_from_name', get_bloginfo( 'name' ) );
+		return apply_filters( 'kwpd_mail_from_name', get_bloginfo( 'name' ) );
 	} );
 
 	// Disable WordPress administration email verification prompt.

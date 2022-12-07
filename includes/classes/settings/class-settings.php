@@ -2,19 +2,19 @@
 /**
  * Settings class
  *
- * @package    Site_Core
+ * @package    KW_Prod
  * @subpackage Classes
  * @category   Settings
  * @since      1.0.0
  */
 
-namespace SiteCore\Classes\Settings;
+namespace KWProd\Classes\Settings;
 
 // Alias namespaces.
 use
-SiteCore\Classes        as Classes,
-SiteCore\Classes\Admin  as Admin,
-SiteCore\Classes\Vendor as Vendor;
+KWProd\Classes        as Classes,
+KWProd\Classes\Admin  as Admin,
+KWProd\Classes\Vendor as Vendor;
 
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -22,10 +22,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 // Define forms directory.
-if ( ! defined( 'SCP_FORMS' ) ) {
-	define( 'SCP_FORMS', [
-		'forms'    => SCP_PATH . 'views/backend/forms/',
-		'partials' => SCP_PATH . 'views/backend/forms/partials'
+if ( ! defined( 'KWPD_FORMS' ) ) {
+	define( 'KWPD_FORMS', [
+		'forms'    => KWPD_PATH . 'views/backend/forms/',
+		'partials' => KWPD_PATH . 'views/backend/forms/partials'
 	] );
 }
 
@@ -45,7 +45,7 @@ class Settings {
 	 *
 	 * The fully qualified page class with namespace.
 	 *
-	 * @example 'SiteCore\Classes\Admin\Sample_Settings_Page'
+	 * @example 'KWProd\Classes\Admin\Sample_Settings_Page'
 	 *
 	 * @since  1.0.0
 	 * @access protected
@@ -58,7 +58,7 @@ class Settings {
 	 *
 	 * The fully qualified page class with namespace.
 	 *
-	 * @example 'SiteCore\Classes\Vendor\Sample_ACF_Options'
+	 * @example 'KWProd\Classes\Vendor\Sample_ACF_Options'
 	 *
 	 * @since  1.0.0
 	 * @access protected
@@ -150,14 +150,14 @@ class Settings {
 
 		$defaults = [
 			'id'            => null,
-			'id_before'     => 'scp_',
+			'id_before'     => 'kwpd_',
 			'id_after'      => null,
 			'capability'    => 'read',
 			'section'       => null,
 			'label'         => null,
 			'label_before'  => null,
 			'label_after'   => null,
-			'class'         => 'scp-setting',
+			'class'         => 'kwpd-setting',
 			'icon'          => null,
 			'description'   => null,
 			'hide-if-no-js' => false,
@@ -195,7 +195,7 @@ function get_settings() {
 	 * This includes main directory (`/`) and any
 	 * subdirectories (`* /`).
 	 */
-	$dir_file = SCP_PATH . 'includes/settings' . "{/,/*/}" . 'settings-*.php';
+	$dir_file = KWPD_PATH . 'includes/settings' . "{/,/*/}" . 'settings-*.php';
 
 	// Include each file matching the path patterns.
 	foreach ( glob( $dir_file, GLOB_BRACE ) as $settings_file ) {

@@ -2,14 +2,14 @@
 /**
  * Add page class
  *
- * @package    Site_Core
+ * @package    KW_Prod
  * @subpackage Classes
  * @category   Admin
  * @since      1.0.0
  */
 
-namespace SiteCore\Classes\Admin;
-use SiteCore\Classes as Classes;
+namespace KWProd\Classes\Admin;
+use KWProd\Classes as Classes;
 
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -196,7 +196,7 @@ class Add_Page {
 
 		$description = sprintf(
 			'<p class="description">%s</p>',
-			__( $this->page_labels['description'], 'sitecore' )
+			__( $this->page_labels['description'], 'kw-prod-design' )
 		);
 
 		if ( ! empty( $this->page_labels['description'] ) ) {
@@ -267,7 +267,7 @@ class Add_Page {
 
 		$html = sprintf(
 			'<p class="submit">%s</p>',
-			submit_button( __( 'Save Settings', 'sitecore' ), 'button-primary', '', true, [] )
+			submit_button( __( 'Save Settings', 'kw-prod-design' ), 'button-primary', '', true, [] )
 		);
 		$html .= '</form>';
 
@@ -588,7 +588,7 @@ class Add_Page {
 	 * Page content
 	 *
 	 * This can be used in the default `callback()` method.
-	 * Hooking into `scp_submanu_page_content` adds
+	 * Hooking into `kwpd_submanu_page_content` adds
 	 * content/markup inside the standard page markup.
 	 * Use a new `callback()` method to override these defaults.
 	 *
@@ -626,7 +626,7 @@ class Add_Page {
 		// Print a heading using the menu title variable.
 		echo  sprintf(
 			'<h1>%s</h1>',
-			__( $this->heading(), 'sitecore' )
+			__( $this->heading(), 'kw-prod-design' )
 		);
 
 		// Print a paragraph with native description class using the description variable.
@@ -655,7 +655,7 @@ class Add_Page {
 		// More information tab.
 		$screen->add_help_tab( [
 			'id'       => 'more_info',
-			'title'    => __( 'More Information', 'sitecore' ),
+			'title'    => __( 'More Information', 'kw-prod-design' ),
 			'content'  => null,
 			'callback' => [ $this, 'more_info' ]
 		] );
@@ -674,7 +674,7 @@ class Add_Page {
 	 * @return void
 	 */
 	public function more_info() {
-		include_once SCP_PATH . 'views/backend/help/sample-more-info.php';
+		include_once KWPD_PATH . 'views/backend/help/sample-more-info.php';
 	}
 
 	/**
@@ -693,7 +693,7 @@ class Add_Page {
 
 		ob_start();
 
-		include_once SCP_PATH . 'views/backend/help/sample-sidebar.php';
+		include_once KWPD_PATH . 'views/backend/help/sample-sidebar.php';
 
 		$html = ob_get_clean();
 

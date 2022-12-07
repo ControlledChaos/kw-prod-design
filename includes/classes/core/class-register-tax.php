@@ -2,13 +2,13 @@
 /**
  * Base class to register a taxonomy
  *
- * @package    Site_Core
+ * @package    KW_Prod
  * @subpackage Classes
  * @category   Core
  * @since      1.0.0
  */
 
-namespace SiteCore\Classes\Core;
+namespace KWProd\Classes\Core;
 
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -193,7 +193,7 @@ class Register_Tax {
 	public function options() {
 
 		$options = [
-			'label'                 => __( ucwords( $this->plural ), 'sitecore' ),
+			'label'                 => __( ucwords( $this->plural ), 'kw-prod-design' ),
 			'labels'                => $this->labels(),
 			'public'                => $this->public,
 			'hierarchical'          => $this->hierarchical,
@@ -226,28 +226,28 @@ class Register_Tax {
 	public function labels() {
 
 		$labels = [
-			'name'                       => __( ucwords( $this->plural ), 'sitecore' ),
-			'singular_name'              => __( ucwords( $this->singular ), 'sitecore' ),
-			'menu_name'                  => __( ucwords( $this->plural ), 'sitecore' ),
-			'all_items'                  => __( 'All ' . ucwords( $this->plural ), 'sitecore' ),
-			'edit_item'                  => __( 'Edit ' . ucwords( $this->singular ), 'sitecore' ),
-			'view_item'                  => __( 'View ' . ucwords( $this->singular ), 'sitecore' ),
-			'update_item'                => __( 'Update ' . ucwords( $this->singular ), 'sitecore' ),
-			'add_new_item'               => __( 'Add New ' . ucwords( $this->singular ), 'sitecore' ),
-			'new_item_name'              => __( 'New ' . ucwords( $this->singular ), 'sitecore' ),
-			'parent_item'                => __( 'Parent ' . ucwords( $this->singular ), 'sitecore' ),
-			'parent_item_colon'          => __( 'Parent ' . ucwords( $this->singular ), 'sitecore' ),
-			'popular_items'              => __( 'Popular ' . ucwords( $this->plural ), 'sitecore' ),
-			'separate_items_with_commas' => __( 'Separate ' . ucwords( $this->plural ) . ' with commas', 'sitecore' ),
-			'add_or_remove_items'        => __( 'Add or Remove ' . ucwords( $this->plural ), 'sitecore' ),
-			'choose_from_most_used'      => __( 'Choose from the most used ' . ucwords( $this->plural ), 'sitecore' ),
-			'not_found'                  => __( 'No ' . ucwords( $this->plural ) . ' Found', 'sitecore' ),
-			'no_terms'                   => __( 'No ' . ucwords( $this->plural ), 'sitecore' ),
-			'filter_by_item'             => __( 'Filter by Category', 'sitecore' ),
-			'items_list_navigation'      => __( ucwords( $this->plural ) . ' list navigation', 'sitecore' ),
-			'items_list'                 => __( ucwords( $this->plural ) . ' List', 'sitecore' ),
-			'most_used'                  => __( 'Most Used ' . ucwords( $this->plural ), 'sitecore' ),
-			'back_to_items'              => __( 'Back to ' . ucwords( $this->plural ), 'sitecore' )
+			'name'                       => __( ucwords( $this->plural ), 'kw-prod-design' ),
+			'singular_name'              => __( ucwords( $this->singular ), 'kw-prod-design' ),
+			'menu_name'                  => __( ucwords( $this->plural ), 'kw-prod-design' ),
+			'all_items'                  => __( 'All ' . ucwords( $this->plural ), 'kw-prod-design' ),
+			'edit_item'                  => __( 'Edit ' . ucwords( $this->singular ), 'kw-prod-design' ),
+			'view_item'                  => __( 'View ' . ucwords( $this->singular ), 'kw-prod-design' ),
+			'update_item'                => __( 'Update ' . ucwords( $this->singular ), 'kw-prod-design' ),
+			'add_new_item'               => __( 'Add New ' . ucwords( $this->singular ), 'kw-prod-design' ),
+			'new_item_name'              => __( 'New ' . ucwords( $this->singular ), 'kw-prod-design' ),
+			'parent_item'                => __( 'Parent ' . ucwords( $this->singular ), 'kw-prod-design' ),
+			'parent_item_colon'          => __( 'Parent ' . ucwords( $this->singular ), 'kw-prod-design' ),
+			'popular_items'              => __( 'Popular ' . ucwords( $this->plural ), 'kw-prod-design' ),
+			'separate_items_with_commas' => __( 'Separate ' . ucwords( $this->plural ) . ' with commas', 'kw-prod-design' ),
+			'add_or_remove_items'        => __( 'Add or Remove ' . ucwords( $this->plural ), 'kw-prod-design' ),
+			'choose_from_most_used'      => __( 'Choose from the most used ' . ucwords( $this->plural ), 'kw-prod-design' ),
+			'not_found'                  => __( 'No ' . ucwords( $this->plural ) . ' Found', 'kw-prod-design' ),
+			'no_terms'                   => __( 'No ' . ucwords( $this->plural ), 'kw-prod-design' ),
+			'filter_by_item'             => __( 'Filter by Category', 'kw-prod-design' ),
+			'items_list_navigation'      => __( ucwords( $this->plural ) . ' list navigation', 'kw-prod-design' ),
+			'items_list'                 => __( ucwords( $this->plural ) . ' List', 'kw-prod-design' ),
+			'most_used'                  => __( 'Most Used ' . ucwords( $this->plural ), 'kw-prod-design' ),
+			'back_to_items'              => __( 'Back to ' . ucwords( $this->plural ), 'kw-prod-design' )
 		];
 
 		// Filter for child classes to modify this array.

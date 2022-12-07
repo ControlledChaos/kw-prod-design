@@ -6,13 +6,13 @@
  * its new class name. Add to the autoloader
  * and instantiate where appropriate.
  *
- * @package    Site_Core
+ * @package    KW_Prod
  * @subpackage Classes
  * @category   Core
  * @since      1.0.0
  */
 
-namespace SiteCore\Classes\Core;
+namespace KWProd\Classes\Core;
 
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -31,8 +31,8 @@ class Register_Admin extends Register_Type {
 	public function __construct() {
 
 		$labels = [
-			'singular'    => __( 'admin page', 'sitecore' ),
-			'plural'      => __( 'admin pages', 'sitecore' ),
+			'singular'    => __( 'admin page', 'kw-prod-design' ),
+			'plural'      => __( 'admin pages', 'kw-prod-design' ),
 			'description' => '',
 			'menu_icon'   => 'dashicons-clipboard'
 		];

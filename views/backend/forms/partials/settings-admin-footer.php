@@ -2,13 +2,13 @@
 /**
  * Form fields for admin settings footer tab
  *
- * @package    Site_Core
+ * @package    KW_Prod
  * @subpackage Views
  * @category   Forms
  * @since      1.0.0
  */
 
-namespace SiteCore\Views\Admin;
-use SiteCore\Classes\Admin as Admin;
+namespace KWProd\Views\Admin;
+use KWProd\Classes\Admin as Admin;
 
 ?>

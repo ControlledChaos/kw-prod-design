@@ -1,10 +1,10 @@
 <?php
 /**
- * Site Core plugin
+ * KW Production Design plugin
  *
  * Develop site-specific plugins for ClassicPress, WordPress, and the antibrand system.
  *
- * @package    Site_Core
+ * @package    KW_Prod
  * @subpackage Init
  * @category   Core
  * @since      1.0.0

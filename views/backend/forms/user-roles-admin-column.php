@@ -4,7 +4,7 @@
  *
  * Outputs a list of roles belonging to the current user.
  *
- * @package    Site_Core
+ * @package    KW_Prod
  * @subpackage Views
  * @category   Forms
  * @since      1.0.0
@@ -18,6 +18,6 @@
 		endforeach;
 		echo implode( ', ', $roles );
 	else : ?>
-		<span class="md-multiple-roles-no-role"><?php _e( 'None', 'sitecore' ); ?></span>
+		<span class="md-multiple-roles-no-role"><?php _e( 'None', 'kw-prod-design' ); ?></span>
 	<?php endif; ?>
 </div><!-- .md-multiple-roles -->

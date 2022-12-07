@@ -2,13 +2,13 @@
 /**
  * Sample widget type
  *
- * @package    Site_Core
+ * @package    KW_Prod
  * @subpackage Classes
  * @category   Widgets
  * @since      1.0.0
  */
 
-namespace SiteCore\Classes\Widgets;
+namespace KWProd\Classes\Widgets;
 
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {

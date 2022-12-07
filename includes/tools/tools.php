@@ -2,13 +2,13 @@
 /**
  * Various utilities
  *
- * @package    Site_Core
+ * @package    KW_Prod
  * @subpackage Includes
  * @category   Tools
  * @since      1.0.0
  */
 
-namespace SiteCore\Tools;
+namespace KWProd\Tools;
 
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -152,7 +152,7 @@ function toolbar_dir_switch() {
 	$wp_admin_bar->add_menu(
 		[
 			'id'    => 'RTL',
-			'title' => sprintf( __( 'Switch to %s', 'sitecore' ), strtoupper( $direction ) ),
+			'title' => sprintf( __( 'Switch to %s', 'kw-prod-design' ), strtoupper( $direction ) ),
 			'href'  => add_query_arg( [ 'd' => $direction ] )
 		]
 	);

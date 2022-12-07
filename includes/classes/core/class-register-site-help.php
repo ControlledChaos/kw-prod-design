@@ -2,13 +2,13 @@
 /**
  * Register the site help post type
  *
- * @package    Site_Core
+ * @package    KW_Prod
  * @subpackage Classes
  * @category   Core
  * @since      1.0.0
  */
 
-namespace SiteCore\Classes\Core;
+namespace KWProd\Classes\Core;
 
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -27,8 +27,8 @@ class Register_Site_Help extends Register_Type {
 	public function __construct() {
 
 		$labels = [
-			'singular'    => __( 'help page', 'sitecore' ),
-			'plural'      => __( 'help pages', 'sitecore' ),
+			'singular'    => __( 'help page', 'kw-prod-design' ),
+			'plural'      => __( 'help pages', 'kw-prod-design' ),
 			'description' => '',
 			'menu_icon'   => 'dashicons-welcome-learn-more'
 		];

@@ -2,16 +2,16 @@
 /**
  * Register ACF options page
  *
- * @package    Site_Core
+ * @package    KW_Prod
  * @subpackage Classes
  * @category   Vendor
  * @since      1.0.0
  */
 
-namespace SiteCore\Classes\Vendor;
+namespace KWProd\Classes\Vendor;
 
 // Alias namespaces.
-use SiteCore\Classes\Admin as Admin;
+use KWProd\Classes\Admin as Admin;
 
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {

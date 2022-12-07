@@ -2,13 +2,13 @@
 /**
  * Plugin deactivation class
  *
- * @package    Site_Core
+ * @package    KW_Prod
  * @subpackage Includes
  * @category   Activate
  * @since      1.0.0
  */
 
-namespace SiteCore\Deactivate;
+namespace KWProd\Deactivate;
 
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {

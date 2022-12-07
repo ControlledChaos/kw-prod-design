@@ -2,19 +2,19 @@
 /**
  * Form fields for user default editor option
  *
- * @package    Site_Core
+ * @package    KW_Prod
  * @subpackage Views
  * @category   Forms
  * @since      1.0.0
  */
 
 // Alias namespaces.
-use SiteCore\Classes\Core as Core;
+use KWProd\Classes\Core as Core;
 
 ?>
 <table class="form-table">
 	<tr class="editor-options-user-options">
-		<th scope="row"><?php _e( 'Default Editor', 'sitecore' ); ?></th>
+		<th scope="row"><?php _e( 'Default Editor', 'kw-prod-design' ); ?></th>
 		<td>
 		<?php wp_nonce_field( 'allow-user-settings', 'editor-options-user-settings' ); ?>
 		<?php Core\Editor_Options :: editor_settings_default(); ?>

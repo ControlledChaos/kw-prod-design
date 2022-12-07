@@ -4,14 +4,14 @@
  *
  * A general use example.
  *
- * @package    Site_Core
+ * @package    KW_Prod
  * @subpackage Views
  * @category   Front
  * @since      1.0.0
  */
 
 // Alias namespaces.
-use SiteCore\Meta_Tags as Meta;
+use KWProd\Meta_Tags as Meta;
 
 ?>
 <?php echo "\r"; ?>

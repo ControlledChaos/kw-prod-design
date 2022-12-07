@@ -6,13 +6,13 @@
  * its new class name. Add to the autoloader
  * and instantiate where appropriate.
  *
- * @package    Site_Core
+ * @package    KW_Prod
  * @subpackage Classes
  * @category   Admin
  * @since      1.0.0
  */
 
-namespace SiteCore\Classes\Admin;
+namespace KWProd\Classes\Admin;
 
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -31,8 +31,8 @@ class Sample_Page extends Add_Page {
 	public function __construct() {
 
 		$labels = [
-			'page_title'  => __( 'Sample Page', 'sitecore' ),
-			'menu_title'  => __( 'Sample Page', 'sitecore' ),
+			'page_title'  => __( 'Sample Page', 'kw-prod-design' ),
+			'menu_title'  => __( 'Sample Page', 'kw-prod-design' ),
 			'description' => __( 'Demonstration of adding a page.' )
 		];
 
@@ -64,16 +64,16 @@ class Sample_Page extends Add_Page {
 
 		$this->add_content_tab( [
 			'id'         => 'sample-one',
-			'tab'        => __( 'One', 'sitecore' ),
-			'heading'    => __( 'Settings One', 'sitecore' ),
+			'tab'        => __( 'One', 'kw-prod-design' ),
+			'heading'    => __( 'Settings One', 'kw-prod-design' ),
 			'content'    => '',
 			'callback'   => [ $this, 'sample_tab' ]
 		] );
 
 		$this->add_content_tab( [
 			'id'         => 'sample-two',
-			'tab'        => __( 'Two', 'sitecore' ),
-			'heading'    => __( 'Settings Two', 'sitecore' ),
+			'tab'        => __( 'Two', 'kw-prod-design' ),
+			'heading'    => __( 'Settings Two', 'kw-prod-design' ),
 			'content'    => '',
 			'callback'   => [ $this, 'sample_tab' ]
 		] );
@@ -87,6 +87,6 @@ class Sample_Page extends Add_Page {
 	 * @return mixed Returns the tab content.
 	 */
 	public function sample_tab() {
-		include SCP_PATH . 'views/backend/pages/sample-page-content.php';
+		include KWPD_PATH . 'views/backend/pages/sample-page-content.php';
 	}
 }

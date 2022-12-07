@@ -2,18 +2,18 @@
 /**
  * Admin dashboard
  *
- * @package    Site_Core
+ * @package    KW_Prod
  * @subpackage Admin
  * @category   Dashboard
  * @since      1.0.0
  */
 
-namespace SiteCore\Admin\Dashboard;
+namespace KWProd\Admin\Dashboard;
 
 // Alias namespaces.
-use SiteCore\Classes as Classes,
-	SiteCore\Classes\Users as Users,
-	SiteCore\Classes\Vendor as Vendor;
+use KWProd\Classes as Classes,
+	KWProd\Classes\Users as Users,
+	KWProd\Classes\Vendor as Vendor;
 
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -49,7 +49,7 @@ function setup() {
 	 * @todo Option to use the panel in addition to
 	 * the config file constant.
 	 */
-	if ( defined( 'SCP_USE_CUSTOM_DASHBOARD' ) && false != SCP_USE_CUSTOM_DASHBOARD ) :
+	if ( defined( 'KWPD_USE_CUSTOM_DASHBOARD' ) && false != KWPD_USE_CUSTOM_DASHBOARD ) :
 
 		// Enqueue dashboard panel styles.
 		add_action( 'admin_enqueue_scripts', $ns( 'dashboard_panel_styles' ) );
@@ -66,7 +66,7 @@ function setup() {
 		// Add custom dashboard panel.
 		add_action( 'wp_dashboard_setup', $ns( 'dashboard_panel' ) );
 
-	endif; // SCP_USE_CUSTOM_DASHBOARD
+	endif; // KWPD_USE_CUSTOM_DASHBOARD
 }
 
 /**
@@ -109,7 +109,7 @@ function remove_widgets() {
 	// remove_meta_box( 'dashboard_activity', 'dashboard', 'normal' );
 
 	// Site Health.
-	if ( defined( 'SCP_ALLOW_SITE_HEALTH' ) && ! SCP_ALLOW_SITE_HEALTH ) {
+	if ( defined( 'KWPD_ALLOW_SITE_HEALTH' ) && ! KWPD_ALLOW_SITE_HEALTH ) {
 		remove_meta_box( 'dashboard_site_health', 'dashboard', 'normal' );
 	}
 
@@ -146,10 +146,10 @@ function dashboard_panel_styles() {
 
 	// Enqueue only on the Dashboard screen.
 	if ( $screen->id == 'dashboard' ) {
-		wp_enqueue_style( 'scp-dashboard', SCP_URL .  'assets/css/dashboard-panel' . $suffix . '.css', [], null, 'screen' );
+		wp_enqueue_style( 'kwpd-dashboard', KWPD_URL .  'assets/css/dashboard-panel' . $suffix . '.css', [], null, 'screen' );
 
 		if ( is_rtl() ) {
-			wp_enqueue_style( 'scp-dashboard-rtl', SCP_URL .  'assets/css/dashboard-panel-rtl' . $suffix . '.css', [], null, 'screen' );
+			wp_enqueue_style( 'kwpd-dashboard-rtl', KWPD_URL .  'assets/css/dashboard-panel-rtl' . $suffix . '.css', [], null, 'screen' );
 		}
 	}
 }
@@ -180,7 +180,7 @@ function widget_order() {
 
 	$id = get_current_user_id();
 	$meta_value = [
-		'normal'  => 'scp-dashboard',
+		'normal'  => 'kwpd-dashboard',
 		'side'    => '',
 		'column3' => '',
 		'column4' => '',
@@ -205,11 +205,11 @@ function dashboard_panel() {
 	$heading = sprintf(
 		'%s %s',
 		get_bloginfo( 'name' ),
-		__( 'Dashboard', 'sitecore' )
+		__( 'Dashboard', 'kw-prod-design' )
 	);
 
 	wp_add_dashboard_widget(
-		'scp-dashboard',
+		'kwpd-dashboard',
 		$heading,
 		__NAMESPACE__ . '\dashboard_template',
 		null,
@@ -236,6 +236,6 @@ function dashboard_template() {
 	if ( ! empty( $dashboard ) ) {
 		get_template_part( 'template-parts/admin/dashboard-panel' . $acf->suffix() );
 	} else {
-		include_once SCP_PATH . 'views/backend/widgets/dashboard-panel' . $acf->suffix() . '.php';
+		include_once KWPD_PATH . 'views/backend/widgets/dashboard-panel' . $acf->suffix() . '.php';
 	}
 }

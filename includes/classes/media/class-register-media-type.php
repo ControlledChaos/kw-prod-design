@@ -2,16 +2,16 @@
 /**
  * Register media type taxonomy
  *
- * @package    Site_Core
+ * @package    KW_Prod
  * @subpackage Classes
  * @category   Media
  * @since      1.0.0
  */
 
-namespace SiteCore\Classes\Media;
+namespace KWProd\Classes\Media;
 
 // Alias namespaces.
-use SiteCore\Classes\Core as Core;
+use KWProd\Classes\Core as Core;
 
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {

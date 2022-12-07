@@ -4,13 +4,13 @@
  *
  * The autoloader registers plugin classes for later use.
  *
- * @package    Site_Core
+ * @package    KW_Prod
  * @subpackage Includes
  * @category   Classes
  * @since      1.0.0
  */
 
-namespace SiteCore;
+namespace KWProd;
 
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -25,17 +25,17 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @since 1.0.0
  * @var   array Defines an array of class file paths.
  */
-define( 'SCP_CLASS', [
-	'core'     => SCP_PATH . 'includes/classes/core/class-',
-	'settings' => SCP_PATH . 'includes/classes/settings/class-',
-	'tools'    => SCP_PATH . 'includes/classes/tools/class-',
-	'media'    => SCP_PATH . 'includes/classes/media/class-',
-	'users'    => SCP_PATH . 'includes/classes/users/class-',
-	'vendor'   => SCP_PATH . 'includes/classes/vendor/class-',
-	'admin'    => SCP_PATH . 'includes/classes/backend/class-',
-	'front'    => SCP_PATH . 'includes/classes/frontend/class-',
-	'widgets'  => SCP_PATH . 'includes/classes/widgets/class-',
-	'general'  => SCP_PATH . 'includes/classes/class-',
+define( 'KWPD_CLASS', [
+	'core'     => KWPD_PATH . 'includes/classes/core/class-',
+	'settings' => KWPD_PATH . 'includes/classes/settings/class-',
+	'tools'    => KWPD_PATH . 'includes/classes/tools/class-',
+	'media'    => KWPD_PATH . 'includes/classes/media/class-',
+	'users'    => KWPD_PATH . 'includes/classes/users/class-',
+	'vendor'   => KWPD_PATH . 'includes/classes/vendor/class-',
+	'admin'    => KWPD_PATH . 'includes/classes/backend/class-',
+	'front'    => KWPD_PATH . 'includes/classes/frontend/class-',
+	'widgets'  => KWPD_PATH . 'includes/classes/widgets/class-',
+	'general'  => KWPD_PATH . 'includes/classes/class-',
 ] );
 
 /**
@@ -44,7 +44,7 @@ define( 'SCP_CLASS', [
  * @since 1.0.0
  * @var   string Defines the namespace of class files.
  */
-define( 'SCP_CLASS_NS', __NAMESPACE__ . '\Classes' );
+define( 'KWPD_CLASS_NS', __NAMESPACE__ . '\Classes' );
 
 /**
  * Array of classes to register
@@ -58,61 +58,61 @@ define( 'SCP_CLASS_NS', __NAMESPACE__ . '\Classes' );
  * @since 1.0.0
  * @var   array Defines an array of class files to register.
  */
-define( 'SCP_CLASSES', [
+define( 'KWPD_CLASSES', [
 
 	// Core classes.
-	SCP_CLASS_NS . '\Core\Editor_Options'       => SCP_CLASS['core'] . 'editor-options.php',
-	SCP_CLASS_NS . '\Core\Register_Type'        => SCP_CLASS['core'] . 'register-type.php',
-	SCP_CLASS_NS . '\Core\Register_Sample_Type' => SCP_CLASS['core'] . 'register-sample-type.php',
-	SCP_CLASS_NS . '\Core\Register_Admin'       => SCP_CLASS['core'] . 'register-admin.php',
-	SCP_CLASS_NS . '\Core\Register_Site_Help'   => SCP_CLASS['core'] . 'register-site-help.php',
-	SCP_CLASS_NS . '\Core\Register_Tax'         => SCP_CLASS['core'] . 'register-tax.php',
-	SCP_CLASS_NS . '\Core\Register_Sample_Tax'  => SCP_CLASS['core'] . 'register-sample-tax.php',
-	SCP_CLASS_NS . '\Core\Types_Taxes_Order'    => SCP_CLASS['core'] . 'types-taxes-order.php',
-	SCP_CLASS_NS . '\Core\Remove_Blog'          => SCP_CLASS['core'] . 'remove-blog.php',
-	SCP_CLASS_NS . '\Core\Remove_Customizer'    => SCP_CLASS['core'] . 'remove-customizer.php',
+	KWPD_CLASS_NS . '\Core\Editor_Options'       => KWPD_CLASS['core'] . 'editor-options.php',
+	KWPD_CLASS_NS . '\Core\Register_Type'        => KWPD_CLASS['core'] . 'register-type.php',
+	KWPD_CLASS_NS . '\Core\Register_Sample_Type' => KWPD_CLASS['core'] . 'register-sample-type.php',
+	KWPD_CLASS_NS . '\Core\Register_Admin'       => KWPD_CLASS['core'] . 'register-admin.php',
+	KWPD_CLASS_NS . '\Core\Register_Site_Help'   => KWPD_CLASS['core'] . 'register-site-help.php',
+	KWPD_CLASS_NS . '\Core\Register_Tax'         => KWPD_CLASS['core'] . 'register-tax.php',
+	KWPD_CLASS_NS . '\Core\Register_Sample_Tax'  => KWPD_CLASS['core'] . 'register-sample-tax.php',
+	KWPD_CLASS_NS . '\Core\Types_Taxes_Order'    => KWPD_CLASS['core'] . 'types-taxes-order.php',
+	KWPD_CLASS_NS . '\Core\Remove_Blog'          => KWPD_CLASS['core'] . 'remove-blog.php',
+	KWPD_CLASS_NS . '\Core\Remove_Customizer'    => KWPD_CLASS['core'] . 'remove-customizer.php',
 
 	// Settings classes.
-	SCP_CLASS_NS . '\Settings\Settings' => SCP_CLASS['settings'] . 'settings.php',
+	KWPD_CLASS_NS . '\Settings\Settings' => KWPD_CLASS['settings'] . 'settings.php',
 
 	// Tools classes.
-	SCP_CLASS_NS . '\Tools\Customizer_Reset' => SCP_CLASS['tools'] . 'customizer-reset.php',
+	KWPD_CLASS_NS . '\Tools\Customizer_Reset' => KWPD_CLASS['tools'] . 'customizer-reset.php',
 
 	// Media classes.
-	SCP_CLASS_NS . '\Media\Register_Media_Type' => SCP_CLASS['media'] . 'register-media-type.php',
+	KWPD_CLASS_NS . '\Media\Register_Media_Type' => KWPD_CLASS['media'] . 'register-media-type.php',
 
 	// Users classes.
-	SCP_CLASS_NS . '\Users\User_Avatars'    => SCP_CLASS['users'] . 'user-avatars.php',
+	KWPD_CLASS_NS . '\Users\User_Avatars'    => KWPD_CLASS['users'] . 'user-avatars.php',
 
 	// Vendor classes.
-	SCP_CLASS_NS . '\Vendor\Plugin'        => SCP_CLASS['vendor'] . 'plugin.php',
-	SCP_CLASS_NS . '\Vendor\Plugin_Sample' => SCP_CLASS['vendor'] . 'plugin-sample.php',
-	SCP_CLASS_NS . '\Vendor\Plugin_ACF'    => SCP_CLASS['vendor'] . 'plugin-acf.php',
-	SCP_CLASS_NS . '\Vendor\Plugin_ACFE'   => SCP_CLASS['vendor'] . 'plugin-acfe.php',
-	SCP_CLASS_NS . '\Vendor\ACF_Columns'   => SCP_CLASS['vendor'] . 'acf-columns.php',
-	SCP_CLASS_NS . '\Vendor\Add_ACF_Options'    => SCP_CLASS['vendor'] . 'add-acf-options.php',
-	SCP_CLASS_NS . '\Vendor\Add_ACF_Suboptions' => SCP_CLASS['vendor'] . 'add-acf-suboptions.php',
-	SCP_CLASS_NS . '\Vendor\ACF_Manage_Site'    => SCP_CLASS['vendor'] . 'acf-manage-site.php',
-	SCP_CLASS_NS . '\Vendor\Sample_ACF_Options'    => SCP_CLASS['vendor'] . 'sample-acf-options.php',
-	SCP_CLASS_NS . '\Vendor\Sample_ACF_Suboptions' => SCP_CLASS['vendor'] . 'sample-acf-suboptions.php',
+	KWPD_CLASS_NS . '\Vendor\Plugin'        => KWPD_CLASS['vendor'] . 'plugin.php',
+	KWPD_CLASS_NS . '\Vendor\Plugin_Sample' => KWPD_CLASS['vendor'] . 'plugin-sample.php',
+	KWPD_CLASS_NS . '\Vendor\Plugin_ACF'    => KWPD_CLASS['vendor'] . 'plugin-acf.php',
+	KWPD_CLASS_NS . '\Vendor\Plugin_ACFE'   => KWPD_CLASS['vendor'] . 'plugin-acfe.php',
+	KWPD_CLASS_NS . '\Vendor\ACF_Columns'   => KWPD_CLASS['vendor'] . 'acf-columns.php',
+	KWPD_CLASS_NS . '\Vendor\Add_ACF_Options'    => KWPD_CLASS['vendor'] . 'add-acf-options.php',
+	KWPD_CLASS_NS . '\Vendor\Add_ACF_Suboptions' => KWPD_CLASS['vendor'] . 'add-acf-suboptions.php',
+	KWPD_CLASS_NS . '\Vendor\ACF_Manage_Site'    => KWPD_CLASS['vendor'] . 'acf-manage-site.php',
+	KWPD_CLASS_NS . '\Vendor\Sample_ACF_Options'    => KWPD_CLASS['vendor'] . 'sample-acf-options.php',
+	KWPD_CLASS_NS . '\Vendor\Sample_ACF_Suboptions' => KWPD_CLASS['vendor'] . 'sample-acf-suboptions.php',
 
 	// Backend/admin classes,
-	SCP_CLASS_NS . '\Admin\Add_Page'                => SCP_CLASS['admin'] . 'add-page.php',
-	SCP_CLASS_NS . '\Admin\Sample_Page'             => SCP_CLASS['admin'] . 'sample-page.php',
-	SCP_CLASS_NS . '\Admin\Sample_Subpage'          => SCP_CLASS['admin'] . 'sample-subpage.php',
-	SCP_CLASS_NS . '\Admin\Admin_Settings_Page'     => SCP_CLASS['admin'] . 'admin-settings-page.php',
-	SCP_CLASS_NS . '\Admin\Admin_ACF_Settings_Page' => SCP_CLASS['admin'] . 'admin-acf-settings-page.php',
-	SCP_CLASS_NS . '\Admin\Content_Settings'        => SCP_CLASS['admin'] . 'content-settings.php',
-	SCP_CLASS_NS . '\Admin\Manage_Website_Page'     => SCP_CLASS['admin'] . 'manage-website-page.php',
+	KWPD_CLASS_NS . '\Admin\Add_Page'                => KWPD_CLASS['admin'] . 'add-page.php',
+	KWPD_CLASS_NS . '\Admin\Sample_Page'             => KWPD_CLASS['admin'] . 'sample-page.php',
+	KWPD_CLASS_NS . '\Admin\Sample_Subpage'          => KWPD_CLASS['admin'] . 'sample-subpage.php',
+	KWPD_CLASS_NS . '\Admin\Admin_Settings_Page'     => KWPD_CLASS['admin'] . 'admin-settings-page.php',
+	KWPD_CLASS_NS . '\Admin\Admin_ACF_Settings_Page' => KWPD_CLASS['admin'] . 'admin-acf-settings-page.php',
+	KWPD_CLASS_NS . '\Admin\Content_Settings'        => KWPD_CLASS['admin'] . 'content-settings.php',
+	KWPD_CLASS_NS . '\Admin\Manage_Website_Page'     => KWPD_CLASS['admin'] . 'manage-website-page.php',
 
 	// Frontend classes.
-	SCP_CLASS_NS . '\Front\Title_Filter'     => SCP_CLASS['front'] . 'title-filter.php',
-	SCP_CLASS_NS . '\Front\Content_Filter'   => SCP_CLASS['front'] . 'content-filter.php',
-	SCP_CLASS_NS . '\Front\Content_Sample'   => SCP_CLASS['front'] . 'content-sample.php',
+	KWPD_CLASS_NS . '\Front\Title_Filter'     => KWPD_CLASS['front'] . 'title-filter.php',
+	KWPD_CLASS_NS . '\Front\Content_Filter'   => KWPD_CLASS['front'] . 'content-filter.php',
+	KWPD_CLASS_NS . '\Front\Content_Sample'   => KWPD_CLASS['front'] . 'content-sample.php',
 
 	// Widget classes.
-	SCP_CLASS_NS . '\Widgets\Add_Widget'    => SCP_CLASS['widgets'] . 'add-widget.php',
-	SCP_CLASS_NS . '\Widgets\Sample_Widget' => SCP_CLASS['widgets'] . 'sample-widget.php'
+	KWPD_CLASS_NS . '\Widgets\Add_Widget'    => KWPD_CLASS['widgets'] . 'add-widget.php',
+	KWPD_CLASS_NS . '\Widgets\Sample_Widget' => KWPD_CLASS['widgets'] . 'sample-widget.php'
 
 
 	// General/miscellaneous classes.
@@ -128,8 +128,8 @@ define( 'SCP_CLASSES', [
  */
 spl_autoload_register(
 	function ( string $class ) {
-		if ( isset( SCP_CLASSES[ $class ] ) ) {
-			require SCP_CLASSES[ $class ];
+		if ( isset( KWPD_CLASSES[ $class ] ) ) {
+			require KWPD_CLASSES[ $class ];
 		}
 	}
 );

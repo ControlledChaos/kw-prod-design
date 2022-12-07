@@ -7,15 +7,15 @@
  * more elegant than the native `die()` screen
  * proveded by the management system.
  *
- * @package    Site_Core
+ * @package    KW_Prod
  * @subpackage Activate
  * @since      1.0.0
  */
 
-namespace SiteCore\Activate;
+namespace KWProd\Activate;
 
 // Alias namespaces.
-use SiteCore\Classes as Classes;
+use KWProd\Classes as Classes;
 
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -47,8 +47,8 @@ function options() {
 	];
 
 	// Local avatars for option update.
-	$mystery = esc_url( SCP_URL . 'assets/images/mystery.png' );
-	$blank   = esc_url( SCP_URL . 'assets/images/blank.png' );
+	$mystery = esc_url( KWPD_URL . 'assets/images/mystery.png' );
+	$blank   = esc_url( KWPD_URL . 'assets/images/blank.png' );
 
 	/**
 	 * If this is a fresh site, if no default is set, or if mystery Gravatar
@@ -74,7 +74,7 @@ function options() {
  * @return void
  */
 function get_row_notice() {
-	add_action( 'after_plugin_row_' . SCP_BASENAME, __NAMESPACE__ . '\row_notice', 5, 3 );
+	add_action( 'after_plugin_row_' . KWPD_BASENAME, __NAMESPACE__ . '\row_notice', 5, 3 );
 }
 
 /**
@@ -94,34 +94,34 @@ function row_notice( $plugin_file, $plugin_data, $status ) {
 
 	?>
 	<style>
-		.plugins tr[data-plugin='<?php echo SCP_BASENAME; ?>'] th,
-		.plugins tr[data-plugin='<?php echo SCP_BASENAME; ?>'] td {
+		.plugins tr[data-plugin='<?php echo KWPD_BASENAME; ?>'] th,
+		.plugins tr[data-plugin='<?php echo KWPD_BASENAME; ?>'] td {
 			box-shadow: none;
 		}
 
 		<?php if ( isset( $plugin_data['update'] ) && ! empty( $plugin_data['update'] ) ) : ?>
 
-			.plugins tr.<?php echo 'sitecore'; ?>-plugin-tr td {
+			.plugins tr.<?php echo 'kw-prod-design'; ?>-plugin-tr td {
 				box-shadow: none ! important;
 			}
 
-			.plugins tr.<?php echo 'sitecore'; ?>-plugin-tr .update-message {
+			.plugins tr.<?php echo 'kw-prod-design'; ?>-plugin-tr .update-message {
 				margin-bottom: 0;
 			}
 
 		<?php endif; ?>
 	</style>
 
-	<tr id="plugin-php-notice" class="plugin-update-tr active <?php echo 'sitecore'; ?>-plugin-tr">
+	<tr id="plugin-php-notice" class="plugin-update-tr active <?php echo 'kw-prod-design'; ?>-plugin-tr">
 		<td colspan="<?php echo $colspan; ?>" class="plugin-update colspanchange">
 			<div class="update-message notice inline notice-error notice-alt">
 				<?php echo sprintf(
 					'<p>%s %s %s %s %s %s</p>',
-					__( 'Functionality of the', 'sitecore' ),
-					SCP_NAME,
-					__( 'plugin has been disabled because it requires PHP version', 'sitecore' ),
-					SCP_MIN_PHP_VERSION,
-					__( 'or greater. Your system is running PHP version', 'sitecore' ),
+					__( 'Functionality of the', 'kw-prod-design' ),
+					KWPD_NAME,
+					__( 'plugin has been disabled because it requires PHP version', 'kw-prod-design' ),
+					KWPD_MIN_PHP_VERSION,
+					__( 'or greater. Your system is running PHP version', 'kw-prod-design' ),
 					phpversion()
 				); ?>
 			</div>
@@ -142,11 +142,11 @@ function php_deactivate_notice_header() {
 	<div id="plugin-php-notice" class="notice notice-error is-dismissible">
 		<?php echo sprintf(
 			'<p>%s %s %s %s %s %s</p>',
-			__( 'Functionality of the', 'sitecore' ),
-			SCP_NAME,
-			__( 'plugin has been disabled because it requires PHP version', 'sitecore' ),
+			__( 'Functionality of the', 'kw-prod-design' ),
+			KWPD_NAME,
+			__( 'plugin has been disabled because it requires PHP version', 'kw-prod-design' ),
 			php()->minimum(),
-			__( 'or greater. Your system is running PHP version', 'sitecore' ),
+			__( 'or greater. Your system is running PHP version', 'kw-prod-design' ),
 			phpversion()
 		); ?>
 	</div>

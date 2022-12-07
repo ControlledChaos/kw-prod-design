@@ -2,16 +2,16 @@
 /**
  * Admin ACF options page
  *
- * @package    Site_Core
+ * @package    KW_Prod
  * @subpackage Classes
  * @category   Admin
  * @since      1.0.0
  */
 
-namespace SiteCore\Classes\Admin;
+namespace KWProd\Classes\Admin;
 
 // Alias namespaces.
-use SiteCore\Classes\Vendor as Vendor;
+use KWProd\Classes\Vendor as Vendor;
 
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -57,8 +57,8 @@ class Admin_ACF_Settings_Page extends Vendor\Add_ACF_Suboptions {
 	 */
 	public function __construct() {
 		parent :: __construct(
-			__( 'Admin Options', 'sitecore' ),
-			__( 'Admin Options', 'sitecore' ),
+			__( 'Admin Options', 'kw-prod-design' ),
+			__( 'Admin Options', 'kw-prod-design' ),
 		);
 	}
 }

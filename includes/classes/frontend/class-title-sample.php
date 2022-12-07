@@ -2,13 +2,13 @@
 /**
  * Sample post title filter
  *
- * @package    Site_Core
+ * @package    KW_Prod
  * @subpackage Classes
  * @category   Front
  * @since      1.0.0
  */
 
-namespace SiteCore\Classes\Front;
+namespace KWProd\Classes\Front;
 
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -85,7 +85,7 @@ class Title_Sample extends Title_Filter {
 					// Text specific to the archive.
 					$title = sprintf(
 						'%s%s',
-						__( 'Archived Post #', 'sitecore' ),
+						__( 'Archived Post #', 'kw-prod-design' ),
 						$id
 					);
 
@@ -95,7 +95,7 @@ class Title_Sample extends Title_Filter {
 					// Text specific to the blog.
 					$title = sprintf(
 						'%s%s',
-						__( 'Blog Post #', 'sitecore' ),
+						__( 'Blog Post #', 'kw-prod-design' ),
 						$id
 					);
 
@@ -105,7 +105,7 @@ class Title_Sample extends Title_Filter {
 					// Text specific to the single post.
 					$title = sprintf(
 						'%s%s',
-						__( 'Post #', 'sitecore' ),
+						__( 'Post #', 'kw-prod-design' ),
 						$id
 					);
 

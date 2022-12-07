@@ -2,13 +2,13 @@
 /**
  * Advanced Custom Fields compatibility
  *
- * @package    Site_Core
+ * @package    KW_Prod
  * @subpackage Classes
  * @category   Vendor
  * @since      1.0.0
  */
 
-namespace SiteCore\Classes\Vendor;
+namespace KWProd\Classes\Vendor;
 
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -126,7 +126,7 @@ class Plugin_ACF extends Plugin {
 	public function use_bundled() {
 
 		// Override constant.
-		if ( defined( 'SCP_USE_BUNDLED_ACF' ) && false == SCP_USE_BUNDLED_ACF ) {
+		if ( defined( 'KWPD_USE_BUNDLED_ACF' ) && false == KWPD_USE_BUNDLED_ACF ) {
 			return false;
 		}
 		return true;
@@ -141,7 +141,7 @@ class Plugin_ACF extends Plugin {
 	 * @return string Returns the URL for ACF files.
 	 */
 	public function acf_settings_url( $url ) {
-		$url = SCP_URL . 'includes/vendor/' . $this->bundled_dir . '/';
+		$url = KWPD_URL . 'includes/vendor/' . $this->bundled_dir . '/';
 		return $url;
 	}
 
@@ -160,7 +160,7 @@ class Plugin_ACF extends Plugin {
 		if ( is_multisite() && ! is_main_site() && ! is_super_admin( get_current_user_id() ) ) {
 			$show_admin = false;
 		}
-		return apply_filters( 'scp_acf_settings_show_admin', $show_admin );
+		return apply_filters( 'kwpd_acf_settings_show_admin', $show_admin );
 	}
 
 	/**
@@ -172,7 +172,7 @@ class Plugin_ACF extends Plugin {
 	 * @return string Returns the directory path.
 	 */
 	public function save_acf_json( $path ) {
-		$path = SCP_PATH . 'includes/fields/acf-json';
+		$path = KWPD_PATH . 'includes/fields/acf-json';
 		return $path;
 	}
 
@@ -186,7 +186,7 @@ class Plugin_ACF extends Plugin {
 	 */
 	public function load_acf_json( $paths ) {
 		unset( $paths[0] );
-		$paths[] = SCP_PATH . 'includes/fields/acf-json';
+		$paths[] = KWPD_PATH . 'includes/fields/acf-json';
 		return $paths;
 	}
 
@@ -209,7 +209,7 @@ class Plugin_ACF extends Plugin {
 		}
 
 		// Only gets files prefixed with `acf-`.
-		$dir_file = SCP_PATH . 'includes/fields' . '/*' . 'acf-*.php';
+		$dir_file = KWPD_PATH . 'includes/fields' . '/*' . 'acf-*.php';
 
 		// Include each file matching the path patterns.
 		foreach ( glob( $dir_file, GLOB_BRACE ) as $fields_file ) {

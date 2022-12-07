@@ -4,14 +4,14 @@
  *
  * @link http://dublincore.org/documents/dcmi-terms/
  *
- * @package    Site_Core
+ * @package    KW_Prod
  * @subpackage Views
  * @category   Front
  * @since      1.0.0
  */
 
 // Alias namespaces.
-use SiteCore\Meta_Tags as Meta;
+use KWProd\Meta_Tags as Meta;
 
 ?>
 <!-- Dublin Core meta tags -->

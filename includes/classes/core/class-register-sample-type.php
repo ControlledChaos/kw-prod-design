@@ -6,13 +6,13 @@
  * its new class name. Add to the autoloader
  * and instantiate where appropriate.
  *
- * @package    Site_Core
+ * @package    KW_Prod
  * @subpackage Classes
  * @category   Core
  * @since      1.0.0
  */
 
-namespace SiteCore\Classes\Core;
+namespace KWProd\Classes\Core;
 
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -31,8 +31,8 @@ class Register_Sample_Type extends Register_Type {
 	public function __construct() {
 
 		$labels = [
-			'singular'    => __( 'sample post', 'sitecore' ),
-			'plural'      => __( 'sample posts', 'sitecore' ),
+			'singular'    => __( 'sample post', 'kw-prod-design' ),
+			'plural'      => __( 'sample posts', 'kw-prod-design' ),
 			'description' => '',
 			'menu_icon'   => 'dashicons-lightbulb'
 		];
@@ -105,9 +105,9 @@ class Register_Sample_Type extends Register_Type {
 		$type_obj  = get_post_type_object( $post_type );
 
 		// New post type labels.
-		$type_obj->labels->menu_name = __( 'Sample Type', 'sitecore' );
-		$type_obj->labels->all_items = __( 'All Samples', 'sitecore' );
-		$type_obj->labels->add_new   = __( 'New Sample', 'sitecore' );
+		$type_obj->labels->menu_name = __( 'Sample Type', 'kw-prod-design' );
+		$type_obj->labels->all_items = __( 'All Samples', 'kw-prod-design' );
+		$type_obj->labels->add_new   = __( 'New Sample', 'kw-prod-design' );
 	}
 
 	/**
@@ -129,13 +129,13 @@ class Register_Sample_Type extends Register_Type {
 				'core/heading',
 				[
 					'level'       => 2,
-					'placeholder' => __( 'Sample Heading', 'sitecore' )
+					'placeholder' => __( 'Sample Heading', 'kw-prod-design' )
 				]
 			],
 			[
 				'core/paragraph',
 				[
-					'placeholder' => __( 'This is a sample paragraph included by the template() method in the class that registers this post type.', 'sitecore' )
+					'placeholder' => __( 'This is a sample paragraph included by the template() method in the class that registers this post type.', 'kw-prod-design' )
 				]
 			],
 		];

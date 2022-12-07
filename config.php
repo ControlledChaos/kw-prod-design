@@ -11,16 +11,16 @@
  * in a settings file is to prevent site administrators wrongly
  * or incorrectly configuring the site built by developers.
  *
- * @package    Site_Core
+ * @package    KW_Prod
  * @subpackage Configuration
  * @category   Core
  * @since      1.0.0
  */
 
-namespace SiteCore;
+namespace KWProd;
 
 // Alias namespaces.
-use SiteCore\Classes as Classes;
+use KWProd\Classes as Classes;
 
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -33,7 +33,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @since 1.0.0
  * @var   string The minimum required PHP version.
  */
-define( 'SCP_MIN_PHP_VERSION', '7.4' );
+define( 'KWPD_MIN_PHP_VERSION', '7.4' );
 
 /**
  * Function: Minimum PHP version
@@ -46,7 +46,7 @@ define( 'SCP_MIN_PHP_VERSION', '7.4' );
  */
 function min_php_version() {
 
-	if ( version_compare( phpversion(), SCP_MIN_PHP_VERSION, '<' ) ) {
+	if ( version_compare( phpversion(), KWPD_MIN_PHP_VERSION, '<' ) ) {
 		return false;
 	}
 	return true;
@@ -63,7 +63,7 @@ function min_php_version() {
  * @since 1.0.0
  * @var   string The latest plugin version.
  */
-define( 'SCP_VERSION', '1.0.0' );
+define( 'KWPD_VERSION', '1.0.0' );
 
 /**
  * Plugin name
@@ -71,8 +71,8 @@ define( 'SCP_VERSION', '1.0.0' );
  * @since 1.0.0
  * @var   string The name of the plugin.
  */
-if ( ! defined( 'SCP_NAME' ) ) {
-	define( 'SCP_NAME', __( 'Site Core', 'sitecore' ) );
+if ( ! defined( 'KWPD_NAME' ) ) {
+	define( 'KWPD_NAME', __( 'KW Production Design', 'kw-prod-design' ) );
 }
 
 /**
@@ -82,7 +82,7 @@ if ( ! defined( 'SCP_NAME' ) ) {
  * @var   string The filesystem directory path (with trailing slash)
  *               for the plugin __FILE__ passed in.
  */
-define( 'SCP_PATH', plugin_dir_path( __FILE__ ) );
+define( 'KWPD_PATH', plugin_dir_path( __FILE__ ) );
 
 /**
  * Constant: Plugin folder URL
@@ -91,7 +91,7 @@ define( 'SCP_PATH', plugin_dir_path( __FILE__ ) );
  * @var   string The URL directory path (with trailing slash)
  *               for the plugin __FILE__ passed in.
  */
-define( 'SCP_URL', plugin_dir_url( __FILE__ ) );
+define( 'KWPD_URL', plugin_dir_url( __FILE__ ) );
 
 /**
  * PHP version check
@@ -113,9 +113,9 @@ if ( ! min_php_version() ) {
  * @since 1.0.0
  * @var   array Plugin identification, support, settings.
  */
-if ( ! defined( 'SCP_CONFIG' ) ) {
+if ( ! defined( 'KWPD_CONFIG' ) ) {
 
-	define( 'SCP_CONFIG', [
+	define( 'KWPD_CONFIG', [
 
 		/**
 		 * Plugin name
@@ -125,7 +125,7 @@ if ( ! defined( 'SCP_CONFIG' ) ) {
 		 * @since 1.0.0
 		 * @var   string The name of the plugin.
 		 */
-		'name' => SCP_NAME,
+		'name' => KWPD_NAME,
 
 		/**
 		 * Developer name
@@ -133,7 +133,7 @@ if ( ! defined( 'SCP_CONFIG' ) ) {
 		 * @since 1.0.0
 		 * @var   string The name of the developer/agency.
 		 */
-		'dev_name' => __( 'Controlled Chaos', 'sitecore' ),
+		'dev_name' => __( 'Controlled Chaos', 'kw-prod-design' ),
 
 		/**
 		 * Developer URL
@@ -157,7 +157,7 @@ if ( ! defined( 'SCP_CONFIG' ) ) {
 		 * @since 1.0.0
 		 * @var   string The URL of the plugin.
 		 */
-		'plugin_url' => esc_url( 'https://github.com/ControlledChaos/sitecore' ),
+		'plugin_url' => esc_url( 'https://github.com/ControlledChaos/kw-prod-design' ),
 
 		/**
 		 * Posts content type
@@ -225,8 +225,8 @@ if ( ! defined( 'SCP_CONFIG' ) ) {
  * @since 1.0.0
  * @var   string The name of the developer/agency.
  */
-if ( ! defined( 'SCP_DEV_NAME' ) ) {
-	define( 'SCP_DEV_NAME', SCP_CONFIG['dev_name'] );
+if ( ! defined( 'KWPD_DEV_NAME' ) ) {
+	define( 'KWPD_DEV_NAME', KWPD_CONFIG['dev_name'] );
 }
 
 /**
@@ -235,8 +235,8 @@ if ( ! defined( 'SCP_DEV_NAME' ) ) {
  * @since 1.0.0
  * @var   string The URL of the developer/agency.
  */
-if ( ! defined( 'SCP_DEV_URL' ) ) {
-	define( 'SCP_DEV_URL', SCP_CONFIG['dev_url'] );
+if ( ! defined( 'KWPD_DEV_URL' ) ) {
+	define( 'KWPD_DEV_URL', KWPD_CONFIG['dev_url'] );
 }
 
 /**
@@ -245,8 +245,8 @@ if ( ! defined( 'SCP_DEV_URL' ) ) {
  * @since 1.0.0
  * @var   string The URL of the developer/agency.
  */
-if ( ! defined( 'SCP_DEV_EMAIL' ) ) {
-	define( 'SCP_DEV_EMAIL', SCP_CONFIG['dev_email'] );
+if ( ! defined( 'KWPD_DEV_EMAIL' ) ) {
+	define( 'KWPD_DEV_EMAIL', KWPD_CONFIG['dev_email'] );
 }
 
 /**
@@ -255,8 +255,8 @@ if ( ! defined( 'SCP_DEV_EMAIL' ) ) {
  * @since 1.0.0
  * @var   string The URL of the plugin.
  */
-if ( ! defined( 'SCP_PLUGIN_URL' ) ) {
-	define( 'SCP_PLUGIN_URL', SCP_CONFIG['plugin_url'] );
+if ( ! defined( 'KWPD_PLUGIN_URL' ) ) {
+	define( 'KWPD_PLUGIN_URL', KWPD_CONFIG['plugin_url'] );
 }
 
 /**
@@ -265,8 +265,8 @@ if ( ! defined( 'SCP_PLUGIN_URL' ) ) {
  * @since 1.0.0
  * @var   string The nature of the default posts (e.g. blog, news).
  */
-if ( ! defined( 'SCP_POSTS_CONTENT_TYPE' ) ) {
-	define( 'SCP_POSTS_CONTENT_TYPE', SCP_CONFIG['posts_content'] );
+if ( ! defined( 'KWPD_POSTS_CONTENT_TYPE' ) ) {
+	define( 'KWPD_POSTS_CONTENT_TYPE', KWPD_CONFIG['posts_content'] );
 }
 
 /**
@@ -275,8 +275,8 @@ if ( ! defined( 'SCP_POSTS_CONTENT_TYPE' ) ) {
  * @since 1.0.0
  * @var   boolean Whether to allow the custom dashboard.
  */
-if ( ! defined( 'SCP_USE_CUSTOM_DASHBOARD' ) ) {
-	define( 'SCP_USE_CUSTOM_DASHBOARD', SCP_CONFIG['dashboard'] );
+if ( ! defined( 'KWPD_USE_CUSTOM_DASHBOARD' ) ) {
+	define( 'KWPD_USE_CUSTOM_DASHBOARD', KWPD_CONFIG['dashboard'] );
 }
 
 /**
@@ -285,8 +285,8 @@ if ( ! defined( 'SCP_USE_CUSTOM_DASHBOARD' ) ) {
  * @since 1.0.0
  * @var   boolean Whether to allow the Site Health feature.
  */
-if ( ! defined( 'SCP_ALLOW_SITE_HEALTH' ) ) {
-	define( 'SCP_ALLOW_SITE_HEALTH', SCP_CONFIG['site_health'] );
+if ( ! defined( 'KWPD_ALLOW_SITE_HEALTH' ) ) {
+	define( 'KWPD_ALLOW_SITE_HEALTH', KWPD_CONFIG['site_health'] );
 }
 
 /**
@@ -295,8 +295,8 @@ if ( ! defined( 'SCP_ALLOW_SITE_HEALTH' ) ) {
  * @since 1.0.0
  * @var   boolean Whether to allow block widgets.
  */
-if ( ! defined( 'SCP_ALLOW_BLOCK_WIDGETS' ) ) {
-	define( 'SCP_ALLOW_BLOCK_WIDGETS', SCP_CONFIG['block_widgets'] );
+if ( ! defined( 'KWPD_ALLOW_BLOCK_WIDGETS' ) ) {
+	define( 'KWPD_ALLOW_BLOCK_WIDGETS', KWPD_CONFIG['block_widgets'] );
 }
 
 /**
@@ -305,8 +305,8 @@ if ( ! defined( 'SCP_ALLOW_BLOCK_WIDGETS' ) ) {
  * @since 1.0.0
  * @var   boolean Whether to allow the links manager feature.
  */
-if ( ! defined( 'SCP_ALLOW_LINKS_MANAGER' ) ) {
-	define( 'SCP_ALLOW_LINKS_MANAGER', SCP_CONFIG['links_manager'] );
+if ( ! defined( 'KWPD_ALLOW_LINKS_MANAGER' ) ) {
+	define( 'KWPD_ALLOW_LINKS_MANAGER', KWPD_CONFIG['links_manager'] );
 }
 
 /**
@@ -315,8 +315,8 @@ if ( ! defined( 'SCP_ALLOW_LINKS_MANAGER' ) ) {
  * @since 1.0.0
  * @var   boolean Whether to allow the Customizer.
  */
-if ( ! defined( 'SCP_ALLOW_CUSTOMIZER' ) ) {
-	define( 'SCP_ALLOW_CUSTOMIZER', SCP_CONFIG['customizer'] );
+if ( ! defined( 'KWPD_ALLOW_CUSTOMIZER' ) ) {
+	define( 'KWPD_ALLOW_CUSTOMIZER', KWPD_CONFIG['customizer'] );
 }
 
 /**
@@ -325,6 +325,6 @@ if ( ! defined( 'SCP_ALLOW_CUSTOMIZER' ) ) {
  * @since 1.0.0
  * @var   boolean Whether to allow admin color pickers.
  */
-if ( ! defined( 'SCP_ALLOW_ADMIN_COLOR_PICKER' ) ) {
-	define( 'SCP_ALLOW_ADMIN_COLOR_PICKER', SCP_CONFIG['color_picker'] );
+if ( ! defined( 'KWPD_ALLOW_ADMIN_COLOR_PICKER' ) ) {
+	define( 'KWPD_ALLOW_ADMIN_COLOR_PICKER', KWPD_CONFIG['color_picker'] );
 }

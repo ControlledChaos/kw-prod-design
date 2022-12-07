@@ -6,13 +6,13 @@
  * its new class name. Add to the autoloader
  * and instantiate where appropriate.
  *
- * @package    Site_Core
+ * @package    KW_Prod
  * @subpackage Classes
  * @category   Vendor
  * @since      1.0.0
  */
 
-namespace SiteCore\Classes\Vendor;
+namespace KWProd\Classes\Vendor;
 
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -80,6 +80,6 @@ class Sample_ACF_Options extends Add_ACF_Options {
 	 * @return void
 	 */
 	public function field_groups() {
-		include_once SCP_PATH . '/includes/fields/acf-sample-options.php';
+		include_once KWPD_PATH . '/includes/fields/acf-sample-options.php';
 	}
 }
