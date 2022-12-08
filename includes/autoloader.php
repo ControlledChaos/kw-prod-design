@@ -61,16 +61,16 @@ define( 'KWPD_CLASS_NS', __NAMESPACE__ . '\Classes' );
 define( 'KWPD_CLASSES', [
 
 	// Core classes.
-	KWPD_CLASS_NS . '\Core\Editor_Options'       => KWPD_CLASS['core'] . 'editor-options.php',
-	KWPD_CLASS_NS . '\Core\Register_Type'        => KWPD_CLASS['core'] . 'register-type.php',
-	KWPD_CLASS_NS . '\Core\Register_Sample_Type' => KWPD_CLASS['core'] . 'register-sample-type.php',
-	KWPD_CLASS_NS . '\Core\Register_Admin'       => KWPD_CLASS['core'] . 'register-admin.php',
-	KWPD_CLASS_NS . '\Core\Register_Site_Help'   => KWPD_CLASS['core'] . 'register-site-help.php',
-	KWPD_CLASS_NS . '\Core\Register_Tax'         => KWPD_CLASS['core'] . 'register-tax.php',
-	KWPD_CLASS_NS . '\Core\Register_Sample_Tax'  => KWPD_CLASS['core'] . 'register-sample-tax.php',
-	KWPD_CLASS_NS . '\Core\Types_Taxes_Order'    => KWPD_CLASS['core'] . 'types-taxes-order.php',
-	KWPD_CLASS_NS . '\Core\Remove_Blog'          => KWPD_CLASS['core'] . 'remove-blog.php',
-	KWPD_CLASS_NS . '\Core\Remove_Customizer'    => KWPD_CLASS['core'] . 'remove-customizer.php',
+	KWPD_CLASS_NS . '\Core\Editor_Options'        => KWPD_CLASS['core'] . 'editor-options.php',
+	KWPD_CLASS_NS . '\Core\Register_Type'         => KWPD_CLASS['core'] . 'register-type.php',
+	KWPD_CLASS_NS . '\Core\Register_Project'      => KWPD_CLASS['core'] . 'register-project.php',
+	KWPD_CLASS_NS . '\Core\Register_Admin'        => KWPD_CLASS['core'] . 'register-admin.php',
+	KWPD_CLASS_NS . '\Core\Register_Site_Help'    => KWPD_CLASS['core'] . 'register-site-help.php',
+	KWPD_CLASS_NS . '\Core\Register_Tax'          => KWPD_CLASS['core'] . 'register-tax.php',
+	KWPD_CLASS_NS . '\Core\Register_Project_Type' => KWPD_CLASS['core'] . 'register-project-type.php',
+	KWPD_CLASS_NS . '\Core\Types_Taxes_Order'     => KWPD_CLASS['core'] . 'types-taxes-order.php',
+	KWPD_CLASS_NS . '\Core\Remove_Blog'           => KWPD_CLASS['core'] . 'remove-blog.php',
+	KWPD_CLASS_NS . '\Core\Remove_Customizer'     => KWPD_CLASS['core'] . 'remove-customizer.php',
 
 	// Settings classes.
 	KWPD_CLASS_NS . '\Settings\Settings' => KWPD_CLASS['settings'] . 'settings.php',
