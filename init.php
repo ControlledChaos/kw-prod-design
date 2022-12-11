@@ -86,7 +86,7 @@ function init() {
 
 	// Instantiate settings classes.
 	new Settings_Class\Settings;
-	new Backend_Class\Content_Settings;
+	// new Backend_Class\Content_Settings;
 
 	// Instantiate core classes.
 	new Core_Class\Register_Project;
