@@ -36,16 +36,16 @@ function setup() {
 	global $pagenow;
 
 	// Sample pages.
-	new Classes\Admin\Sample_Page;
-	new Classes\Admin\Sample_Subpage;
+	// new Classes\Admin\Sample_Page;
+	// new Classes\Admin\Sample_Subpage;
 
 	// Admin settings.
-	new Classes\Admin\Admin_Settings_Page;
+	// new Classes\Admin\Admin_Settings_Page;
 
 	if ( Compat\active_acf_pro() ) {
 		// new Vendor\ACF_Manage_Site;
 	} else {
-		new Classes\Admin\Manage_Website_Page;
+		// new Classes\Admin\Manage_Website_Page;
 	}
 
 	// Post edit screens.

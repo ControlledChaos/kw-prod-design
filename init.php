@@ -91,8 +91,8 @@ function init() {
 	// Instantiate core classes.
 	new Core_Class\Register_Project;
 	new Core_Class\Register_Project_Type;
-	new Core_Class\Register_Admin;
-	new Core_Class\Register_Site_Help;
+	// new Core_Class\Register_Admin;
+	// new Core_Class\Register_Site_Help;
 
 	// If the Customizer is disabled in the system config file.
 	if ( ( defined( 'KWPD_ALLOW_CUSTOMIZER' ) && false == KWPD_ALLOW_CUSTOMIZER ) && ! current_user_can( 'develop' ) ) {
@@ -151,7 +151,7 @@ function init() {
 	}
 
 	// Widgets.
-	new Widgets_Class\Sample_Widget;
+	// new Widgets_Class\Sample_Widget;
 
 	// Disable Site Health notifications.
 	if ( defined( 'KWPD_ALLOW_SITE_HEALTH' ) && ! KWPD_ALLOW_SITE_HEALTH ) {
