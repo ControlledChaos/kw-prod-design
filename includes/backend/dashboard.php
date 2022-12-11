@@ -93,14 +93,17 @@ function remove_widgets() {
 
 	global $wp_meta_boxes;
 
+	// Remove core welcome panel.
+	remove_action( 'welcome_panel', 'wp_welcome_panel' );
+
 	// WordPress news.
-	// unset( $wp_meta_boxes['dashboard']['side']['core']['dashboard_primary'] );
+	unset( $wp_meta_boxes['dashboard']['side']['core']['dashboard_primary'] );
 
 	// ClassicPress petitions.
 	// unset( $wp_meta_boxes['dashboard']['normal']['core']['dashboard_petitions'] );
 
 	// Hide Quick Draft (QuickPress) widget.
-	// unset( $wp_meta_boxes['dashboard']['side']['core']['dashboard_quick_press'] );
+	unset( $wp_meta_boxes['dashboard']['side']['core']['dashboard_quick_press'] );
 
 	// Hide At a Glance widget.
 	// unset( $wp_meta_boxes['dashboard']['normal']['core']['dashboard_right_now'] );
