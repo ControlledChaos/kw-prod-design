@@ -34,7 +34,7 @@ class Register_Project extends Register_Type {
 			'singular'    => __( 'project', 'kw-prod-design' ),
 			'plural'      => __( 'projects', 'kw-prod-design' ),
 			'description' => '',
-			'menu_icon'   => 'dashicons-art'
+			'menu_icon'   => 'dashicons-portfolio'
 		];
 
 		$options = [
