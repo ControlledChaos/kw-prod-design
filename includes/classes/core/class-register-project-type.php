@@ -1,10 +1,6 @@
 <?php
 /**
- * Register sample taxonomy
- *
- * Copy this file and rename it to reflect
- * its new class name. Add to the autoloader
- * and instantiate where appropriate.
+ * Register project type taxonomy
  *
  * @package    KW_Prod
  * @subpackage Classes
@@ -37,7 +33,7 @@ class Register_Project_Type extends Register_Tax {
 		$labels = [
 			'singular'    => __( 'project type', 'kw-prod-design' ),
 			'plural'      => __( 'project types', 'kw-prod-design' ),
-			'description' => __( 'Organize projects by type.', 'kw-prod-design' ),
+			'description' => __( 'Projects by type.', 'kw-prod-design' ),
 			'menu_icon'   => 'dashicons-tag'
 		];
 
