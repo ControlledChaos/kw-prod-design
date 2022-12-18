@@ -91,6 +91,7 @@ function init() {
 	// Instantiate core classes.
 	new Core_Class\Register_Project;
 	new Core_Class\Register_Project_Type;
+	new Core_Class\Register_Project_Role;
 	// new Core_Class\Register_Admin;
 	// new Core_Class\Register_Site_Help;
 
