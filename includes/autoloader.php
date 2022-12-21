@@ -109,7 +109,7 @@ define( 'KWPD_CLASSES', [
 	// Frontend classes.
 	KWPD_CLASS_NS . '\Front\Title_Filter'     => KWPD_CLASS['front'] . 'title-filter.php',
 	KWPD_CLASS_NS . '\Front\Content_Filter'   => KWPD_CLASS['front'] . 'content-filter.php',
-	KWPD_CLASS_NS . '\Front\Content_Sample'   => KWPD_CLASS['front'] . 'content-sample.php',
+	KWPD_CLASS_NS . '\Front\Content_Project'   => KWPD_CLASS['front'] . 'content-project.php',
 
 	// Widget classes.
 	KWPD_CLASS_NS . '\Widgets\Add_Widget'    => KWPD_CLASS['widgets'] . 'add-widget.php',

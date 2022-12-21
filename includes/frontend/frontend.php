@@ -10,6 +10,8 @@
 
 namespace KWProd\Front;
 
+use KWProd\Classes\Front as Frontend_Class;
+
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {
 	die;
@@ -47,6 +49,9 @@ function setup() {
 	// Post type archive titles & descriptions.
 	add_filter( 'get_the_archive_title', $ns( 'archive_titles' ) );
 	add_filter( 'get_the_archive_description', $ns( 'archive_descriptions' ) );
+
+	// Content filters.
+	new Frontend_Class\Content_Project;
 }
 
 /**
