@@ -43,6 +43,9 @@ function setup() {
 	// Default add gallery images link.
 	add_filter( 'media_view_settings', $ns( 'gallery_link' ), 10 );
 
+	// Enqueue lightbox assets.
+	add_action( 'wp_enqueue_scripts', $ns( 'lightbox_assets' ) );
+
 	// Add lightbox attributes to images & galleries.
 	add_filter( 'wp_get_attachment_link', $ns( 'lightbox_gallery_attribute' ), 10, 2 );
 	add_filter( 'the_content', $ns( 'lightbox_image_attribute' ), 10, 1 );
@@ -167,6 +170,25 @@ function gallery_link( $settings ) {
 	$settings['galleryDefaults']['link'] = 'file';
 
 	return $settings;
+}
+
+/**
+ * Enqueue lightbox assets
+ *
+ * @since  1.0.0
+ * @return void
+ */
+function lightbox_assets() {
+
+	// Script suffix.
+	if ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) {
+		$suffix = '';
+	} else {
+		$suffix = '.min';
+	}
+
+	wp_enqueue_script( 'kw-prod-lightbox', KWPD_URL . '/assets/js/lightbox' . $suffix . '.js', [ 'jquery' ], KWPD_VERSION, true );
+	wp_enqueue_style( 'kw-prod-lightbox', KWPD_URL . '/assets/css/lightbox' . $suffix . '.css', [], KWPD_VERSION, 'all' );
 }
 
 /**
