@@ -80,6 +80,18 @@ function media_taxonomies() {
  */
 function image_sizes() {
 
+	// 16:9 HD Video.
+	add_image_size( 'large-video', 1280, 720, true );
+	add_image_size( 'medium-video', 960, 540, true );
+	add_image_size( 'small-video', 640, 360, true );
+	add_image_size( 'thumbnail-video', 320, 180, true );
+
+	// 2:3 Poster images.
+	add_image_size( 'large-poster', 853, 1280, true );
+	add_image_size( 'medium-poster', 426, 640, true );
+	add_image_size( 'small-poster', 213, 320, true );
+	add_image_size( 'thumbnail-poster', 160, 240, true );
+
 	/**
 	 * Meta image
 	 *
