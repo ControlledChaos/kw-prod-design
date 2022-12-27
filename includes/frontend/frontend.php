@@ -50,7 +50,8 @@ function setup() {
 	add_filter( 'get_the_archive_title', $ns( 'archive_titles' ) );
 	add_filter( 'get_the_archive_description', $ns( 'archive_descriptions' ) );
 
-	// Content filters.
+	// Title & content filters.
+	new Frontend_Class\Title_Project;
 	new Frontend_Class\Content_Project;
 }
 
