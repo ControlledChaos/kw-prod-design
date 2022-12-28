@@ -52,7 +52,8 @@
 
 .project-imdb .icon {
   display: inline-block;
-  vertical-align: middle;
+  vertical-align: baseline;
+  line-height: 1;
 }
 
 .project-imdb .icon svg {
