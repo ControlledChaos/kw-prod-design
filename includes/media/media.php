@@ -199,8 +199,8 @@ function lightbox_assets() {
 		$suffix = '.min';
 	}
 
-	wp_enqueue_script( 'kw-prod-lightbox', KWPD_URL . '/assets/js/lightbox' . $suffix . '.js', [ 'jquery' ], KWPD_VERSION, true );
-	wp_enqueue_style( 'kw-prod-lightbox', KWPD_URL . '/assets/css/lightbox' . $suffix . '.css', [], KWPD_VERSION, 'all' );
+	wp_enqueue_script( 'kw-prod-lightbox', KWPD_URL . 'assets/js/lightbox' . $suffix . '.js', [ 'jquery' ], KWPD_VERSION, true );
+	wp_enqueue_style( 'kw-prod-lightbox', KWPD_URL . 'assets/css/lightbox' . $suffix . '.css', [], KWPD_VERSION, 'all' );
 }
 
 /**
