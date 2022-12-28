@@ -107,10 +107,12 @@ if ( $imdb_url ) {
 	$imdb = null;
 }
 
+$vimeo_data = null;
 if ( ! empty( $vimeo_url ) ) {
-	$vimeo_data = json_decode( file_get_contents( 'http://vimeo.com/api/oembed.json?url=' . $vimeo_url ) );
-} else {
-	$vimeo_data = null;
+	$file = 'http://vimeo.com/api/oembed.json?url=' . $vimeo_url;
+	if ( file_exists( $file ) ) {
+		$vimeo_data = json_decode( file_get_contents( $file ) );
+	}
 }
 
 if ( ! $vimeo_data ) {
