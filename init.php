@@ -77,6 +77,9 @@ function init() {
 	foreach ( glob( KWPD_PATH . 'includes/users/*.php' ) as $filename ) {
 		require $filename;
 	}
+	foreach ( glob( KWPD_PATH . 'includes/fields/*.php' ) as $filename ) {
+		require $filename;
+	}
 	foreach ( glob( KWPD_PATH . 'includes/tools/*.php' ) as $filename ) {
 		require $filename;
 	}
@@ -114,6 +117,9 @@ function init() {
 			new Core_Class\Editor_Options;
 		}
 	}
+
+	// Fields.
+	Fields\Project\setup();
 
 	// Tools.
 	// @todo Put into a settings page.
