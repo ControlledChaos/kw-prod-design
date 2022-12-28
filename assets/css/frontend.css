@@ -38,12 +38,26 @@
   gap: var(--kwpd-single-project-top--gap);
 }
 
+.project-featured-image {
+  max-width: var(--kwpd-single-project--featured-image--max-width, 240px);
+}
+
 .project-details p {
   margin-top: 0;
 }
 
 .project-details .project-info-label {
   font-weight: 700;
+}
+
+.project-imdb .icon {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.project-imdb .icon svg {
+  fill: currentColor;
+  height: 1em;
 }
 
 .projects-grid {
