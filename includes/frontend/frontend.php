@@ -152,6 +152,8 @@ function enqueue_scripts() {
 	} else {
 		$suffix = '.min';
 	}
+
+	wp_enqueue_script( 'kw-prod-tooltips', KWPD_URL . 'assets/js/tooltips' . $suffix . '.js', [ 'jquery' ], KWPD_VERSION, true );
 }
 
 /**
@@ -170,6 +172,7 @@ function enqueue_styles() {
 	}
 
 	wp_enqueue_style( 'kwpd-frontend', KWPD_URL . 'assets/css/frontend' . $suffix . '.css', [], KWPD_VERSION, 'all' );
+	wp_enqueue_style( 'kw-prod-tooltips', KWPD_URL . 'assets/css/tooltips' . $suffix . '.css', [], KWPD_VERSION, 'all' );
 }
 
 /**

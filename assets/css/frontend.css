@@ -61,6 +61,7 @@
 }
 
 .projects-grid {
+  list-style: var(--kwpd-projects-grid--list-style, none);
   display: var(--kwpd-projects-grid--display);
   -ms-grid-columns: var(--kwpd-projects-grid--poster-template-columns);
       grid-template-columns: var(--kwpd-projects-grid--poster-template-columns);

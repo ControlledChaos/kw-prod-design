@@ -67,6 +67,7 @@
 ///  Project grids
 ///
 .projects-grid {
+	list-style: var( --kwpd-projects-grid--list-style, none );
 	display: var( --kwpd-projects-grid--display );
 	grid-template-columns: var( --kwpd-projects-grid--poster-template-columns );
 	gap: var( --kwpd-projects-grid--gap );
