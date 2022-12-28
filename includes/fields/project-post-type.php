@@ -428,7 +428,14 @@ function fields() {
 				'type'              => 'repeater',
 				'instructions'      => __( '', 'kw-prod-design' ),
 				'required'          => 0,
-				'conditional_logic' => 0,
+				'conditional_logic' => [
+					[
+						[
+							'field'    => 'field_5948b2c4f2479',
+							'operator' => '!=empty',
+						],
+					],
+				],
 				'wrapper'           => [
 					'width' => '',
 					'class' => '',

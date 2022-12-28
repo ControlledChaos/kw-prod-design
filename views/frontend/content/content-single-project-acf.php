@@ -189,7 +189,7 @@ if ( ! is_null( $project_types ) ) {
 	</div>
 	<?php endif; ?>
 
-	<?php if ( have_rows( 'project_additional_videos' ) ) : ?>
+	<?php if ( $vimeo && have_rows( 'project_additional_videos' ) ) : ?>
 		<div class="project-additional-videos">
 			<h2><?php _e( 'Additional Videos' ); ?></h2>
 			<ul>
