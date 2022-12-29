@@ -28,7 +28,7 @@ function setup() {
 		return __NAMESPACE__ . "\\$function";
 	};
 
-	add_action( 'init', $ns( 'fields' ) );
+	add_action( 'acf/init', $ns( 'fields' ) );
 }
 
 /**
