@@ -115,9 +115,8 @@ if ( ! empty( $vimeo_url ) ) {
 	}
 }
 
-if ( ! $vimeo_data ) {
-	$vimeo = null;
-} else {
+$vimeo = null;
+if ( $vimeo_data ) {
 	$vimeo = $vimeo_data->video_id;
 }
 
@@ -198,7 +197,7 @@ if ( ! is_null( $project_types ) ) {
 			<?php endwhile; ?>
 			</ul>
 		</div>
-	<?php endif; // if $vimeo ?>
+	<?php endif; ?>
 
 	<?php if ( $gallery ) : ?>
 	<div class="project-gallery" id="project-gallery-<?php echo get_the_ID(); ?>">
