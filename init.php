@@ -118,9 +118,6 @@ function init() {
 		}
 	}
 
-	// Fields.
-	Fields\Project\setup();
-
 	// Tools.
 	// @todo Put into a settings page.
 	new Tools_Class\Customizer_Reset;
@@ -138,6 +135,9 @@ function init() {
 	// Advanced Custom Fields: Extended.
 	$kwpd_acfe = new Vendor_Class\Plugin_ACFE;
 	$kwpd_acfe->include();
+
+	// Fields.
+	Fields\Project\setup();
 
 	// Users.
 	Users\setup();

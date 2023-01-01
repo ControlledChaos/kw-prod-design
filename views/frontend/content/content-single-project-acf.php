@@ -109,10 +109,8 @@ if ( $imdb_url ) {
 
 $vimeo_data = null;
 if ( ! empty( $vimeo_url ) ) {
-	$file = 'http://vimeo.com/api/oembed.json?url=' . $vimeo_url;
-	if ( file_exists( $file ) ) {
-		$vimeo_data = json_decode( file_get_contents( $file ) );
-	}
+	$vimeo_file = 'http://vimeo.com/api/oembed.json?url=' . $vimeo_url;
+	$vimeo_data = json_decode( file_get_contents( $vimeo_file ) );
 }
 
 $vimeo = null;

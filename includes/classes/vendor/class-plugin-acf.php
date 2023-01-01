@@ -100,7 +100,7 @@ class Plugin_ACF extends Plugin {
 		add_filter( 'acf/settings/show_admin', [ $this, 'acf_settings_show_admin' ] );
 
 		// Add ACF field groups.
-		$this->field_groups();
+		// $this->field_groups();
 
 		/**
 		 * Remove the ACF toolbar.

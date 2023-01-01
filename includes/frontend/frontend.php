@@ -217,18 +217,9 @@ function archive_descriptions( $description ) {
 		is_home() && is_main_query()
 	) {
 		return sprintf(
-			'<p>%s</p>',
-			__( 'This is a filtered sample description for the default post type.', 'kw-prod-design' )
-		);
-
-	// Sample post type description.
-	} elseif (
-		'sample_type' === get_post_type() &&
-		is_home() && is_main_query()
-	) {
-		return sprintf(
-			'<p>%s</p>',
-			__( 'This is a filtered description for the sample post type.', 'kw-prod-design' )
+			'<p>%s %s</p>',
+			__( 'Get the latest news from', 'kw-prod-design' ),
+			get_bloginfo( 'name' )
 		);
 	}
 	return $description;
