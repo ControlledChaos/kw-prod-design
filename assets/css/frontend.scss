@@ -80,6 +80,135 @@
 	&.projects-screenshot-grid {
 		grid-template-columns: var( --kwpd-projects-grid--screenshot-template-columns );
 	}
+
+	figure {
+		position: relative;
+		overflow: hidden;
+		max-width: 480px;
+		border: var(--kwpd-projects-grid--figure--border);
+
+		img {
+			display: block;
+			width: 100%;
+			max-width: 100%;
+			height: auto;
+			background-color: var(--kwpd-projects-grid--figure-image--background-color, #111111);
+			color: var(--kwpd-projects-grid--figure-image--color, #ffffff);
+		}
+
+		&:hover {
+			figcaption {
+				opacity: 1;
+			}
+		}
+	}
+
+	figcaption {
+		position: var(--kwpd-projects-grid--figcaption--position, absolute);
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		display: var(--kwpd-projects-grid--figcaption--display, flex);
+		flex-direction: var(--kwpd-projects-grid--figcaption--flex-direction, column);
+		justify-content: var(--kwpd-projects-grid--figcaption--justify-content, flex-end);
+		padding: var(--kwpd-projects-grid--figcaption--padding, 1rem);
+		background: var(--kwpd-projects-grid--figcaption--background);
+		opacity: 0;
+		transition: opacity .25s;
+
+		* {
+			color: white !important;
+		}
+
+		svg {
+			height: 1.25rem;
+			fill: currentColor;
+		}
+
+		a {
+			text-decoration: none;
+		}
+
+		.text-video,
+		.text-gallery,
+		.text-more {
+			border: 0;
+			clip: rect(1px, 1px, 1px, 1px);
+			-webkit-clip-path: inset(50%);
+			clip-path: inset(50%);
+			height: 1px;
+			margin: -1px;
+			overflow: hidden;
+			padding: 0;
+			position: absolute !important;
+			width: 1px;
+			word-wrap: normal !important;
+		}
+	}
+
+	&.projects-poster-grid {
+
+		figcaption {
+			opacity: 0;
+
+			&:hover {
+				opacity: 1;
+			}
+		}
+	}
+
+	&.projects-screenshot-grid {
+
+		figure {
+			img {
+				filter: grayscale(20%);
+				transition: all .25s;
+			}
+
+			&:hover {
+				img {
+					filter: grayscale(0%);
+				}
+			}
+		}
+	}
+
+	h3 {
+		margin-top: 1em;
+		font-size: 1.125rem;
+		line-height: 1.2;
+	}
+
+	div {
+		ul {
+			list-style: none;
+			width: 100%;
+			margin: 1rem 0 0;
+			display: flex;
+			opacity: 1;
+			transition: opacity .25s;
+
+			@media screen and (max-width: 640px) {
+				justify-content: space-between;
+			}
+
+			li {
+				margin: 0;
+				line-height: 1;
+
+				&:not( :last-of-type) {
+					margin-right: 10%;
+				}
+			}
+		}
+
+		&:hover {
+			ul {
+				opacity: 1;
+			}
+		}
+	}
 }
 
 .projects-grid-item {
