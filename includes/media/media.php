@@ -50,6 +50,9 @@ function setup() {
 	add_filter( 'wp_get_attachment_link', $ns( 'lightbox_gallery_attribute' ), 10, 2 );
 	add_filter( 'the_content', $ns( 'lightbox_image_attribute' ), 10, 1 );
 
+	// Lightbox by class.
+	add_action( 'wp_footer', $ns( 'lightbox_class' ), 99 );
+
 	// Add featured images to RSS feeds.
 	add_filter( 'the_excerpt_rss', $ns( 'rss_featured_images' ) );
 	add_filter( 'the_content_feed', $ns( 'rss_featured_images' ) );
@@ -236,6 +239,19 @@ function lightbox_image_attribute( $content ) {
 		$content = preg_replace( $pattern, $replace, $content );
 
 		return $content;
+}
+
+/**
+ * Lightbox by class
+ *
+ * @since  1.0.0
+ * @return void
+ */
+function lightbox_class() {
+
+	$script = "<script>jQuery(document).ready( function($) { $( 'a.lightbox' ).attr( 'data-fancybox', '' ); })</script>";
+
+	echo $script;
 }
 
 /**
